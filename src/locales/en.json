@@ -1,0 +1,64 @@
+{
+    "site": {
+      "name": "Site Name",
+      "description": "Site Description"
+    },
+    "nav": {
+      "home": "Home",
+      "blog": "Blog",
+      "docs": "Docs"
+    },
+    "home": {
+      "title": "Home Page",
+      "description": "Welcome to our website",
+      "welcome": "Welcome to Our Website",
+      "intro": "This is the content of the home page"
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Read our latest articles",
+      "header": "Blog",
+      "shareTitle": "Share this blog",
+      "readMore": "Read More"
+    },
+    "docs": {
+      "title": "Documentation",
+      "description": "Explore our documentation",
+      "header": "Documentation",
+      "shareTitle": "Share these docs"
+    },
+    "page": {
+      "description": "{{page}} page"
+    },
+    "search": {
+      "placeholder": "Search here...",
+      "button": "Search"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next",
+      "pageXOfY": "Page {{current}} of {{total}}"
+    },
+    "theme": {
+      "light": "Light Mode",
+      "dark": "Dark Mode",
+      "toggle": "Toggle Theme"
+    },
+    "language": {
+      "ar": "Arabic",
+      "en": "English",
+      "select": "Select Language"
+    },
+    "footer": {
+      "copyright": "All rights reserved © {{year}}"
+    },
+    "share": {
+      "facebook": "Share on Facebook",
+      "twitter": "Share on Twitter",
+      "linkedin": "Share on LinkedIn"
+    },
+    "error": {
+      "notFound": "Page Not Found",
+      "goHome": "Go to Home Page"
+    }
+  }

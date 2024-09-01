@@ -1,0 +1,64 @@
+{
+    "site": {
+      "name": "اسم الموقع",
+      "description": "وصف الموقع"
+    },
+    "nav": {
+      "home": "الرئيسية",
+      "blog": "المدونة",
+      "docs": "الوثائق"
+    },
+    "home": {
+      "title": "الصفحة الرئيسية",
+      "description": "مرحبًا بك في موقعنا",
+      "welcome": "مرحبًا بك في موقعنا",
+      "intro": "هذا هو محتوى الصفحة الرئيسية"
+    },
+    "blog": {
+      "title": "المدونة",
+      "description": "اقرأ أحدث مقالاتنا",
+      "header": "المدونة",
+      "shareTitle": "شارك هذه المدونة",
+      "readMore": "اقرأ المزيد"
+    },
+    "docs": {
+      "title": "الوثائق",
+      "description": "استكشف وثائقنا",
+      "header": "الوثائق",
+      "shareTitle": "شارك هذه الوثائق"
+    },
+    "page": {
+      "description": "صفحة {{page}}"
+    },
+    "search": {
+      "placeholder": "ابحث هنا...",
+      "button": "بحث"
+    },
+    "pagination": {
+      "previous": "السابق",
+      "next": "التالي",
+      "pageXOfY": "الصفحة {{current}} من {{total}}"
+    },
+    "theme": {
+      "light": "الوضع الفاتح",
+      "dark": "الوضع الداكن",
+      "toggle": "تبديل الوضع"
+    },
+    "language": {
+      "ar": "العربية",
+      "en": "الإنجليزية",
+      "select": "اختر اللغة"
+    },
+    "footer": {
+      "copyright": "جميع الحقوق محفوظة © {{year}}"
+    },
+    "share": {
+      "facebook": "شارك على فيسبوك",
+      "twitter": "شارك على تويتر",
+      "linkedin": "شارك على لينكد إن"
+    },
+    "error": {
+      "notFound": "الصفحة غير موجودة",
+      "goHome": "العودة للصفحة الرئيسية"
+    }
+  }

@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense, lazy } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+import Layout from './components/Layout';
+import ErrorBoundary from './components/ErrorBoundary';
+import Loading from './components/Loading';
+
+const Home = lazy(() => import('./pages/Home'));
+const Docs = lazy(() => import('./pages/Docs'));
+const Blog = lazy(() => import('./pages/Blog'));
+const Page = lazy(() => import('./pages/Page'));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HelmetProvider>
+      <ErrorBoundary>
+        <BrowserRouter>
+          <Layout>
+            <Suspense fallback={<Loading />}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/docs/:slug" element={<Docs />} />
+                <Route path="/pages/lug" element={<Page />} />
+                <Route path="/blog/:slug" element={<Blog />} />
+              </Routes>
+            </Suspense>
+          </Layout>
+        </BrowserRouter>
+      </ErrorBoundary>
+    </HelmetProvider>
   );
 }
 
