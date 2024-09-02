@@ -1,0 +1,12 @@
+[
+  {
+    "name": "about",
+    "path": "/markdown/pages/about",
+    "type": "file"
+  },
+  {
+    "name": "index",
+    "path": "/markdown/pages/index",
+    "type": "file"
+  }
+]

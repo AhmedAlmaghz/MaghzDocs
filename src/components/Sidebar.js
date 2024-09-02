@@ -1,52 +1,48 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getMarkdownFiles } from '../utils/markdown';
+
+const NestedList = ({ items, basePath = '' }) => {
+  return (
+    <ul className="pl-4">
+      {items.map((item, index) => (
+        <li key={index} className="my-2">
+          {item.type === 'directory' ? (
+            <details>
+              <summary className="cursor-pointer font-bold">{item.name}</summary>
+              {/* <NestedList items={item.children || []} basePath={`${basePath}/${item.name}`} /> */}
+              <NestedList items={item.children || []}  />
+            </details>
+          ) : (
+            <Link to={`${basePath}/${item.path}`} className="text-blue-600 hover:underline">
+              {item.name.replace('.md', '')}
+            </Link>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 const Sidebar = () => {
-  const [pages, setPages] = useState([]);
+  const [structure, setStructure] = useState([]);
 
   useEffect(() => {
-    const fetchPages = async () => {
+    const fetchStructure = async () => {
       try {
-        const blogPages = await getMarkdownFiles('/markdown/blog');
-        const docPages = await getMarkdownFiles('/markdown/docs');
-        const staticPages = await getMarkdownFiles('/markdown/pages');
-        console.log(staticPages);
-        
-        setPages([
-          { title: 'Blog', items: blogPages },
-          { title: 'Docs', items: docPages },
-          { title: 'Pages', items: staticPages },
-        ]);
+        const response = await fetch('/markdown/structure.json');
+        const data = await response.json();
+        setStructure(data);
       } catch (error) {
-        console.error('Error fetching pages:', error);
-        setPages([]);
+        console.error('Error fetching structure:', error);
       }
     };
-
-    fetchPages();
+    fetchStructure();
   }, []);
 
   return (
-    <aside className="bg-gray-100 p-4 w-64">
-      {pages.map((section) => (
-        <div key={section.title}>
-          <h3 className="font-bold mb-2">{section.title}</h3>
-          {Array.isArray(section.items) ? (
-            <ul>
-              {section.items.map((page) => (
-                <li key={page.name}>
-                  <Link to={`/${section.title.toLowerCase()}/${page.name}`} className="hover:text-blue-600">
-                    {page.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>No items available</p>
-          )}
-        </div>
-      ))}
+    <aside className="bg-gray-100 p-4 w-64 overflow-auto">
+      <h2 className="text-xl font-bold mb-4">المحتويات</h2>
+      <NestedList items={structure} />
     </aside>
   );
 };

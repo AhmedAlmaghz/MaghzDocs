@@ -1,3 +1,8 @@
+---
+title: Using_peft_for_inference
+date: 2024-09-02
+---
+
 
 # تحميل LoRAs للاستنتاج
 

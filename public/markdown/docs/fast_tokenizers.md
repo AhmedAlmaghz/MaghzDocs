@@ -1,3 +1,8 @@
+---
+title: Fast_tokenizers
+date: 2024-09-02
+---
+
 # استخدام المحللات من 🤗 Tokenizers
 
 يعتمد [`PreTrainedTokenizerFast`] على مكتبة [🤗 Tokenizers](https://huggingface.co/docs/tokenizers). يمكن تحميل المحللات التي تم الحصول عليها من مكتبة 🤗 Tokenizers ببساطة شديدة في 🤗 Transformers.

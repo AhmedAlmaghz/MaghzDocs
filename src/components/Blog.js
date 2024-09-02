@@ -1,23 +1,32 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import MarkdownContent from '../components/MarkdownContent';
+import { processMarkdown } from '../utils/markdown';
 
-const Blog = ({ posts }) => {
-  const { t } = useTranslation();
+const Blog = () => {
+  const { slug } = useParams();
+  const [post, setPost] = useState({ frontmatter: {}, content: '' });
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      try {
+        const { frontmatter, content } = await processMarkdown(`/markdown/blog/${slug}.md`);
+        setPost({ frontmatter, content });
+      } catch (error) {
+        console.error('Error fetching blog post:', error);
+        setPost({ frontmatter: {}, content: '# Error\nFailed to load content.' });
+      }
+    };
+
+    fetchPost();
+  }, [slug]);
 
   return (
-    <div className="space-y-8">
-      {posts.map((post, index) => (
-        <article key={index} className="border-b pb-4">
-          <h2 className="text-2xl font-bold mb-2">{post.title}</h2>
-          <div className="prose max-w-none mb-4" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
-          <Link to={`/blog/${post.slug}`} className="text-blue-600 hover:underline">
-            {t('readMore')}
-          </Link>
-        </article>
-      ))}
+    <div>
+      <h1>{post.frontmatter.title}</h1>
+      <MarkdownContent content={post.content} />
     </div>
   );
 };
 
-export default React.memo(Blog);
+export default Blog;

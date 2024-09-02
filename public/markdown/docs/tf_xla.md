@@ -1,3 +1,8 @@
+---
+title: Tf_xla
+date: 2024-09-02
+---
+
 # تكامل XLA لنماذج TensorFlow
 
 تعد Accelerated Linear Algebra، التي يطلق عليها XLA، مترجمًا لتسريع وقت التشغيل لنماذج TensorFlow. من [الوثائق الرسمية](https://www.tensorflow.org/xla):

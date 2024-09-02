@@ -1,3 +1,8 @@
+---
+title: Index
+date: 2024-09-02
+---
+
 # 🤗 Transformers
 
 أحدث ما توصلت إليه الآلة في مجال التعلم لبيئة [PyTorch](https://pytorch.org/) و [TensorFlow](https://www.tensorflow.org/) و [JAX](https://jax.readthedocs.io/en/latest/) .

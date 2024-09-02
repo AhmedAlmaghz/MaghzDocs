@@ -1,3 +1,8 @@
+---
+title: Notebooks
+date: 2024-09-02
+---
+
 سأبدأ الترجمة من بعد التعليق الأول في الملف:
 
 # Jupyter Notebooks

@@ -1,41 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
-import { useTranslation } from 'react-i18next';
-// import Layout from '../components/Layout';
-import { getMarkdownFiles, processMarkdown } from '../utils/markdown';
+import MarkdownContent from '../components/MarkdownContent';
+import { processMarkdown } from '../utils/markdown';
 
 const Page = () => {
-  const [content, setContent] = useState('');
-  const [title, setTitle] = useState('');
-  const { pageName } = useParams();
-  const { t } = useTranslation();
+  const {slug } = useParams();
+  const [post, setPost] = useState({ frontmatter: {}, content: '' });
 
   useEffect(() => {
-    const fetchPage = async () => {
-      const pagesDir = '/markdown/pages';
-      const files = await getMarkdownFiles(pagesDir);
-      const pageFile = files.find(file => file.name.toLowerCase() === pageName);
-      if (pageFile) {
-        const pageContent = await processMarkdown(pageFile.path);
-        setContent(pageContent);
-        setTitle(pageFile.name);
+    const fetchPost = async () => {
+      try {
+        const { frontmatter, content } = await processMarkdown(`/markdown/pages/${slug}.md`);
+        setPost({ frontmatter, content });
+      } catch (error) {
+        console.error('Error fetching blog post:', error);
+        setPost({ frontmatter: {}, content: '# Error\nFailed to load content.' });
       }
     };
 
-    fetchPage();
-  }, [pageName]);
+    fetchPost();
+  }, [slug]);
 
   return (
-    <>
-      <Helmet>
-        <title>{title} | {t('site.name')}</title>
-        <meta name="description" content={t('page.description', { page: title })} />
-      </Helmet>
-      <h1 className="text-4xl font-bold mb-4">{title}</h1>
-      <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: content }} />
-    </>
+    <div className="max-w-3xl mx-auto">
+      <h1 className="text-3xl font-bold mb-4">{String(post.frontmatter.title).replace('_',' ')}</h1>
+      <MarkdownContent content={post.content} />
+    </div>
   );
 };
 
-export default React.memo(Page);
+export default Page;

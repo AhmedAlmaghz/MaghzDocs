@@ -1,3 +1,8 @@
+---
+title: Sagemaker
+date: 2024-09-02
+---
+
 تم نقل الوثائق إلى [hf.co/docs/sagemaker](https://huggingface.co/docs/sagemaker). سيتم إزالة هذه الصفحة في الإصدار 5.0 من برنامج Transformers.
 
 ### جدول المحتويات

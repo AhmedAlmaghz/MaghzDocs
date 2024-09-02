@@ -2,12 +2,21 @@
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/*.{js,jsx,ts,tsx}",
+    "./public/*.html",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
-      colors: {
-        primary: '#1D4ED8',
-        secondary: '#3B82F6',
+      backgroundColor: {
+        skin: {
+          base: 'var(--bg-color)',
+        },
+      },
+      textColor: {
+        skin: {
+          base: 'var(--text-color)',
+        },
       },
     },
   },

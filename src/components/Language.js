@@ -1,7 +1,8 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import {useTranslation } from 'react-i18next';
 
-const Language = ({ languages }) => {
+const languages=['ar','en','fr']
+const Language = () => {
   const { i18n, t } = useTranslation();
 
   const handleChange = (e) => {
@@ -10,7 +11,7 @@ const Language = ({ languages }) => {
 
   return (
     <select 
-      value={i18n.language} 
+      // value={i18nNext.language} 
       onChange={handleChange} 
       className="p-2 border rounded"
       aria-label={t('selectLanguage')}

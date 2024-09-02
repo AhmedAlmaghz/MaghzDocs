@@ -1,3 +1,8 @@
+---
+title: Perf_train_tpu_tf
+date: 2024-09-02
+---
+
 # التدريب على وحدة معالجة tensor باستخدام TensorFlow
 
 ### ما هي وحدة معالجة tensor (TPU)؟

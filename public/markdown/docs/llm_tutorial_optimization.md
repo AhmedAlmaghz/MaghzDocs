@@ -1,3 +1,8 @@
+---
+title: Llm_tutorial_optimization
+date: 2024-09-02
+---
+
 # تحسين نماذج اللغة الكبيرة من أجل السرعة والذاكرة
 
 تتقدم نماذج اللغة الكبيرة (LLMs) مثل GPT3/4، [Falcon](https://huggingface.co/tiiuae/falcon-40b)، و [Llama](https://huggingface.co/meta-llama/Llama-2-70b-hf) بسرعة في قدرتها على أداء المهام التي تركز على الإنسان، مما يؤكد نفسها كأدوات أساسية في الصناعات القائمة على المعرفة الحديثة.

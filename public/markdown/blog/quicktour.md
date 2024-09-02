@@ -1,3 +1,8 @@
+---
+title: Quicktour
+date: 2024-09-02
+---
+
 [[open-in-colab]]
  # جولة سريعة 
 

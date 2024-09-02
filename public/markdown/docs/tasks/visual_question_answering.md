@@ -1,3 +1,8 @@
+---
+title: Visual_question_answering
+date: 2024-09-02
+---
+
 ## الإجابة البصرية 
 
 [[open-in-colab]] 

@@ -1,3 +1,8 @@
+---
+title: Run_scripts
+date: 2024-09-02
+---
+
 # التدريب باستخدام سكريبت 
 
 بالإضافة إلى دفاتر 🤗 Transformers [notebooks](./notebooks)، هناك أيضًا نصوص برمجية توضيحية توضح كيفية تدريب نموذج لمهمة باستخدام [PyTorch](https://github.com/huggingface/transformers/tree/main/examples/pytorch) أو [TensorFlow](https://github.com/huggingface/transformers/tree/main/examples/tensorflow) أو [JAX/Flax](https://github.com/huggingface/transformers/tree/main/examples/flax).

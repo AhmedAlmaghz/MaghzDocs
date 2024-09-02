@@ -1,3 +1,8 @@
+---
+title: Perf_torch_compile
+date: 2024-09-02
+---
+
 # تسريع الاستنتاج باستخدام torch.compile()
 
 يهدف هذا الدليل إلى تقديم معيار لقياس سرعة الاستنتاج المحسنة التي تم تقديمها مع [torch.compile()] (https://pytorch.org/tutorials/intermediate/torch_compile_tutorial.html) لنماذج الرؤية الحاسوبية في 🤗 Transformers.

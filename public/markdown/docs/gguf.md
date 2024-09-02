@@ -1,3 +1,8 @@
+---
+title: Gguf
+date: 2024-09-02
+---
+
 # GGUF وتفاعلها مع المحولات 
 
 يستخدم تنسيق ملف GGUF لتخزين النماذج للاستدلال باستخدام [GGML](https://github.com/ggerganov/ggml) والمكتبات الأخرى التي تعتمد عليه، مثل [llama.cpp](https://github.com/ggerganov/llama.cpp) أو [whisper.cpp](https://github.com/ggerganov/whisper.cpp) الشهيرة جدًا. 

@@ -1,3 +1,8 @@
+---
+title: Document_question_answering
+date: 2024-09-02
+---
+
 ## الإجابة على الأسئلة الواردة في المستند
 
 [[open-in-colab]]

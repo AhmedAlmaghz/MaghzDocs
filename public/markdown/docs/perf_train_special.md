@@ -1,3 +1,8 @@
+---
+title: Perf_train_special
+date: 2024-09-02
+---
+
 # تدريب PyTorch على Apple silicon 
 
 في السابق، كان تدريب النماذج على أجهزة Mac يقتصر على وحدة المعالجة المركزية فقط. مع إصدار PyTorch v1.12، يمكنك الاستفادة من تدريب النماذج باستخدام معالجات الرسوميات Silicon GPUs من Apple للحصول على أداء وتدريب أسرع بشكل ملحوظ. يتم تشغيل هذا في PyTorch عن طريق دمج معالجات الرسوميات Metal Performance Shaders (MPS) من Apple كخلفية. تقوم خلفية [MPS](https://pytorch.org/docs/stable/notes/mps.html) بتنفيذ عمليات PyTorch كشظايا معدنية مخصصة وتضع هذه الوحدات النمطية على جهاز 'mps'. 
