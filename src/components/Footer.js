@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import SocialMedia from './SocialMedia';
 
 const Footer = ({ pages = [] }) => {
   const { t } = useTranslation();
@@ -18,7 +19,8 @@ const Footer = ({ pages = [] }) => {
           ))}
         </ul>
       </nav>
-      <p className="mt-4">{t('copyright', { year: new Date().getFullYear() })}</p>
+      <SocialMedia />
+      <p className="mt-4">{t('Copyright for MaghzDocs by @AhmedAlmaghz', { year: new Date().getFullYear() })}</p>
     </footer>
   );
 };

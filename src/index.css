@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @import url('katex/dist/katex.min.css');
-@import url('highlight.js/styles/github.css');
+@import url('highlight.js/styles/atom-one-light.min.css');
 
 :root {
   --bg-color: #ffffff;
@@ -18,6 +18,145 @@
 body {
   @apply bg-skin-base text-skin-base;
 }
+
+
+/* Start  MarkdownContent.css */
+/* إزالة الحدود من عنصر pre */
 pre {
+  border: none;
   direction: ltr;
+  background:inherit; /* خلفية داكنة للكود */
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  position: relative;
 }
+
+/* تحسين زر النسخ */
+button {
+  background: #3498db; /* لون أزرق هادئ */
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #2980b9; /* لون أزرق داكن عند التحويم */
+}
+
+/* أنماط الفيديو لإضافة نسبة العرض إلى الارتفاع */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: #000;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* تحسين تصميم الخرائط التفاعلية */
+.map-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 نسبة العرض إلى الارتفاع */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none; /* إزالة الحدود */
+}
+
+/* تحسين تصميم الرسوم البيانية */
+.chart-container {
+  margin: 20px 0;
+  padding: 16px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* تحسين النصوص مثل blockquote */
+blockquote {
+  border-left: 4px solid #3498db; /* شريط أزرق على اليسار */
+  padding-left: 16px;
+  color: #555;
+  font-style: italic;
+  background: #f9f9f9;
+  border-radius: 4px;
+  margin: 16px 0;
+}
+/* تحسين النصوص مثل tip */
+tip {
+  border-left: 4px solid #3498db; /* شريط أزرق على اليسار */
+  border-right: 4px solid #3498db; /* شريط أزرق على اليسار */
+  padding-left: 16px ;
+  padding-right: 16px ;
+  color: #555;
+  font-style: italic;
+  background: #f9f9f9;
+  border-radius: 4px;
+
+}
+
+/* تحسين القوائم */
+ul, ol {
+  padding-left: 20px;
+}
+
+ul li, ol li {
+  margin-bottom: 8px;
+}
+
+/* تحسين العناوين */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
+h5 {
+  font-size: 1.1em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+/* End MarkdownContent.css */

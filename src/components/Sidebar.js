@@ -1,7 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useContext } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { PaginationContext } from '../contexts/PaginationContext';
 
 const NestedList = ({ items, basePath = '' }) => {
+  const location = useLocation();
+  const { setCurrentPage, setPreviousPage, setNextPage } = useContext(PaginationContext);
+
+  useEffect(() => {
+    const currentIndex = items.findIndex(item => location.pathname.includes(item.path));
+    if (currentIndex !== -1) {
+      setCurrentPage(items[currentIndex].path);
+      setPreviousPage(currentIndex > 0 ? items[currentIndex - 1].path : null);
+      setNextPage(currentIndex < items.length - 1 ? items[currentIndex + 1].path : null);
+    }
+  }, [location.pathname, items, setCurrentPage, setPreviousPage, setNextPage]);
+
   return (
     <ul className="pl-4">
       {items.map((item, index) => (

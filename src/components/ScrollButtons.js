@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
 
 const ScrollButtons = () => {
   const { t } = useTranslation();
@@ -13,20 +14,20 @@ const ScrollButtons = () => {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 flex flex-col space-y-2">
-      <button 
-        onClick={scrollToTop} 
-        className="p-2 bg-primary text-white rounded hover:bg-blue-700 transition-colors"
+    <div className="fixed bottom-4 left-4 flex flex-col space-y-4">
+      <button
+        onClick={scrollToTop}
+        className="p-3 bg-gradient-to-r from-green-400 to-blue-500 text-white rounded-full shadow-lg hover:from-green-500 hover:to-blue-600 transition-all transform hover:scale-110"
         aria-label={t('scrollToTop')}
       >
-        {t('top')}
+        <FaArrowUp size={15} />
       </button>
-      <button 
-        onClick={scrollToBottom} 
-        className="p-2 bg-primary text-white rounded hover:bg-blue-700 transition-colors"
+      <button
+        onClick={scrollToBottom}
+        className="p-3 bg-gradient-to-r from-purple-400 to-pink-500 text-white rounded-full shadow-lg hover:from-purple-500 hover:to-pink-600 transition-all transform hover:scale-110"
         aria-label={t('scrollToBottom')}
       >
-        {t('bottom')}
+        <FaArrowDown size={15} />
       </button>
     </div>
   );
