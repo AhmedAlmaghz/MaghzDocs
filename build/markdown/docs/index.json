@@ -1,0 +1,337 @@
+[
+  {
+    "name": "accelerate",
+    "path": "/markdown/docs/accelerate",
+    "type": "file"
+  },
+  {
+    "name": "add new_model",
+    "path": "/markdown/docs/add_new_model",
+    "type": "file"
+  },
+  {
+    "name": "add new_pipeline",
+    "path": "/markdown/docs/add_new_pipeline",
+    "type": "file"
+  },
+  {
+    "name": "agents",
+    "path": "/markdown/docs/agents",
+    "type": "file"
+  },
+  {
+    "name": "attention",
+    "path": "/markdown/docs/attention",
+    "type": "file"
+  },
+  {
+    "name": "autoclass tutorial",
+    "path": "/markdown/docs/autoclass_tutorial",
+    "type": "file"
+  },
+  {
+    "name": "benchmarks",
+    "path": "/markdown/docs/benchmarks",
+    "type": "file"
+  },
+  {
+    "name": "bertology",
+    "path": "/markdown/docs/bertology",
+    "type": "file"
+  },
+  {
+    "name": "big models",
+    "path": "/markdown/docs/big_models",
+    "type": "file"
+  },
+  {
+    "name": "chat templating",
+    "path": "/markdown/docs/chat_templating",
+    "type": "file"
+  },
+  {
+    "name": "community",
+    "path": "/markdown/docs/community",
+    "type": "file"
+  },
+  {
+    "name": "contributing",
+    "path": "/markdown/docs/contributing",
+    "type": "file"
+  },
+  {
+    "name": "conversations",
+    "path": "/markdown/docs/conversations",
+    "type": "file"
+  },
+  {
+    "name": "create a_model",
+    "path": "/markdown/docs/create_a_model",
+    "type": "file"
+  },
+  {
+    "name": "custom models",
+    "path": "/markdown/docs/custom_models",
+    "type": "file"
+  },
+  {
+    "name": "debugging",
+    "path": "/markdown/docs/debugging",
+    "type": "file"
+  },
+  {
+    "name": "deepspeed",
+    "path": "/markdown/docs/deepspeed",
+    "type": "file"
+  },
+  {
+    "name": "fast tokenizers",
+    "path": "/markdown/docs/fast_tokenizers",
+    "type": "file"
+  },
+  {
+    "name": "fsdp",
+    "path": "/markdown/docs/fsdp",
+    "type": "file"
+  },
+  {
+    "name": "generation strategies",
+    "path": "/markdown/docs/generation_strategies",
+    "type": "file"
+  },
+  {
+    "name": "gguf",
+    "path": "/markdown/docs/gguf",
+    "type": "file"
+  },
+  {
+    "name": "glossary",
+    "path": "/markdown/docs/glossary",
+    "type": "file"
+  },
+  {
+    "name": "hpo train",
+    "path": "/markdown/docs/hpo_train",
+    "type": "file"
+  },
+  {
+    "name": "index",
+    "path": "/markdown/docs/index",
+    "type": "file"
+  },
+  {
+    "name": "installation",
+    "path": "/markdown/docs/installation",
+    "type": "file"
+  },
+  {
+    "name": "llm optims",
+    "path": "/markdown/docs/llm_optims",
+    "type": "file"
+  },
+  {
+    "name": "llm tutorial",
+    "path": "/markdown/docs/llm_tutorial",
+    "type": "file"
+  },
+  {
+    "name": "llm tutorial_optimization",
+    "path": "/markdown/docs/llm_tutorial_optimization",
+    "type": "file"
+  },
+  {
+    "name": "model memory_anatomy",
+    "path": "/markdown/docs/model_memory_anatomy",
+    "type": "file"
+  },
+  {
+    "name": "model sharing",
+    "path": "/markdown/docs/model_sharing",
+    "type": "file"
+  },
+  {
+    "name": "model summary",
+    "path": "/markdown/docs/model_summary",
+    "type": "file"
+  },
+  {
+    "name": "multilingual",
+    "path": "/markdown/docs/multilingual",
+    "type": "file"
+  },
+  {
+    "name": "notebooks",
+    "path": "/markdown/docs/notebooks",
+    "type": "file"
+  },
+  {
+    "name": "pad truncation",
+    "path": "/markdown/docs/pad_truncation",
+    "type": "file"
+  },
+  {
+    "name": "peft",
+    "path": "/markdown/docs/peft",
+    "type": "file"
+  },
+  {
+    "name": "performance",
+    "path": "/markdown/docs/performance",
+    "type": "file"
+  },
+  {
+    "name": "perf hardware",
+    "path": "/markdown/docs/perf_hardware",
+    "type": "file"
+  },
+  {
+    "name": "perf infer_cpu",
+    "path": "/markdown/docs/perf_infer_cpu",
+    "type": "file"
+  },
+  {
+    "name": "perf infer_gpu_one",
+    "path": "/markdown/docs/perf_infer_gpu_one",
+    "type": "file"
+  },
+  {
+    "name": "perf torch_compile",
+    "path": "/markdown/docs/perf_torch_compile",
+    "type": "file"
+  },
+  {
+    "name": "perf train_cpu",
+    "path": "/markdown/docs/perf_train_cpu",
+    "type": "file"
+  },
+  {
+    "name": "perf train_cpu_many",
+    "path": "/markdown/docs/perf_train_cpu_many",
+    "type": "file"
+  },
+  {
+    "name": "perf train_gpu_many",
+    "path": "/markdown/docs/perf_train_gpu_many",
+    "type": "file"
+  },
+  {
+    "name": "perf train_gpu_one",
+    "path": "/markdown/docs/perf_train_gpu_one",
+    "type": "file"
+  },
+  {
+    "name": "perf train_special",
+    "path": "/markdown/docs/perf_train_special",
+    "type": "file"
+  },
+  {
+    "name": "perf train_tpu_tf",
+    "path": "/markdown/docs/perf_train_tpu_tf",
+    "type": "file"
+  },
+  {
+    "name": "perplexity",
+    "path": "/markdown/docs/perplexity",
+    "type": "file"
+  },
+  {
+    "name": "philosophy",
+    "path": "/markdown/docs/philosophy",
+    "type": "file"
+  },
+  {
+    "name": "pipeline tutorial",
+    "path": "/markdown/docs/pipeline_tutorial",
+    "type": "file"
+  },
+  {
+    "name": "pipeline webserver",
+    "path": "/markdown/docs/pipeline_webserver",
+    "type": "file"
+  },
+  {
+    "name": "preprocessing",
+    "path": "/markdown/docs/preprocessing",
+    "type": "file"
+  },
+  {
+    "name": "pr checks",
+    "path": "/markdown/docs/pr_checks",
+    "type": "file"
+  },
+  {
+    "name": "quicktour",
+    "path": "/markdown/docs/quicktour",
+    "type": "file"
+  },
+  {
+    "name": "run scripts",
+    "path": "/markdown/docs/run_scripts",
+    "type": "file"
+  },
+  {
+    "name": "sagemaker",
+    "path": "/markdown/docs/sagemaker",
+    "type": "file"
+  },
+  {
+    "name": "serialization",
+    "path": "/markdown/docs/serialization",
+    "type": "file"
+  },
+  {
+    "name": "tasks",
+    "path": "/markdown/docs\\tasks",
+    "type": "directory"
+  },
+  {
+    "name": "tasks explained",
+    "path": "/markdown/docs/tasks_explained",
+    "type": "file"
+  },
+  {
+    "name": "task summary",
+    "path": "/markdown/docs/task_summary",
+    "type": "file"
+  },
+  {
+    "name": "testing",
+    "path": "/markdown/docs/testing",
+    "type": "file"
+  },
+  {
+    "name": "tflite",
+    "path": "/markdown/docs/tflite",
+    "type": "file"
+  },
+  {
+    "name": "tf xla",
+    "path": "/markdown/docs/tf_xla",
+    "type": "file"
+  },
+  {
+    "name": "tokenizer summary",
+    "path": "/markdown/docs/tokenizer_summary",
+    "type": "file"
+  },
+  {
+    "name": "torchscript",
+    "path": "/markdown/docs/torchscript",
+    "type": "file"
+  },
+  {
+    "name": "trainer",
+    "path": "/markdown/docs/trainer",
+    "type": "file"
+  },
+  {
+    "name": "training",
+    "path": "/markdown/docs/training",
+    "type": "file"
+  },
+  {
+    "name": "troubleshooting",
+    "path": "/markdown/docs/troubleshooting",
+    "type": "file"
+  }
+]
