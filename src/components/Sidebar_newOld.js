@@ -1,9 +1,7 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import { PaginationContext } from '../contexts/PaginationContext';
 import { FaFolder, FaFolderOpen, FaFileAlt } from 'react-icons/fa';
-// import useCache from '../hooks/useCache';
 
 const NestedList = ({ items, basePath = '' }) => {
   const location = useLocation();
@@ -34,8 +32,7 @@ const NestedList = ({ items, basePath = '' }) => {
                 <span>{item.name}</span>
               </summary>
               <div className="ml-4 mt-2 border-l-2 border-purple-300 pl-4 transition-all duration-300 ease-in-out">
-                {/* <NestedList items={item.children || []} basePath={`${basePath}/${item.path}`} /> */}
-                <NestedList items={item.children || []}  />
+                <NestedList items={item.children || []} basePath={`${basePath}/${item.path}`} />
               </div>
             </details>
           ) : (
@@ -54,17 +51,6 @@ const NestedList = ({ items, basePath = '' }) => {
 };
 
 const Sidebar = () => {
-  const { t } = useTranslation();
-  // const { data: structure, loading, error } = useCache('sidebar_structure', async () => {
-  //   const response = await fetch('/markdown/structure.json');
-  //   return response.json();
-  // }, 3600000); // 1 hour cache
-
-  // const renderedStructure = useMemo(() => {
-  //   if (loading) return <p>{t('loading')}</p>;
-  //   if (error) return <p>{t('errorLoadingStructure')}</p>;
-  //   return <NestedList items={structure} />;
-  // }, [structure, loading, error, t]);
   const [structure, setStructure] = useState([]);
 
   useEffect(() => {
@@ -82,9 +68,7 @@ const Sidebar = () => {
 
   return (
     <aside className="bg-gradient-to-r from-gray-100 to-gray-200 p-5 w-64 overflow-auto shadow-lg rounded-lg">
-      <h2 className="text-2xl font-bold text-purple-700 mb-4">{t('contents')}</h2>
-      {/* {renderedStructure} */}
-      {/* {fetchStructure} */}
+      <h2 className="text-2xl font-bold text-purple-700 mb-4">المحتويات</h2>
       <NestedList items={structure} />
     </aside>
   );

@@ -2,31 +2,33 @@ import React, { Suspense, lazy } from 'react';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
-import rehypeHighlight from 'rehype-highlight';
 import rehypeRaw from 'rehype-raw';
-import { PuffLoader } from 'react-spinners'; // استيراد اللودينج أنيميشن من react-spinners
-import { Bar } from 'react-chartjs-2'; // استيراد الرسوم البيانية
+import { PuffLoader } from 'react-spinners';
+import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-// استخدام React.lazy لتحميل ReactMarkdown بشكل مؤجل
 const ReactMarkdown = lazy(() => import('react-markdown'));
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const MarkdownContent = ({ content }) => {
   return (
     <Suspense fallback={<Loader />}>
       <ReactMarkdown
         remarkPlugins={[remarkGfm, remarkMath]}
-        rehypePlugins={[rehypeKatex, rehypeHighlight, rehypeRaw]}
+        rehypePlugins={[rehypeKatex, rehypeRaw]}
         components={{
           img: ({ node, ...props }) => (
-            <figure className="flex justify-center">
-              <img className="max-w-full h-auto rounded-lg shadow-md" {...props} alt={props.alt || ''} />
-              {props.alt && <figcaption className="text-center text-sm mt-2 text-gray-500">{props.alt}</figcaption>}
+            <figure className="my-8">
+              <img className="max-w-full h-auto rounded-lg shadow-md mx-auto" {...props} alt={props.alt || ''} />
+              {props.alt && <figcaption className="text-center text-sm mt-2 text-gray-600 italic">{props.alt}</figcaption>}
             </figure>
           ),
           table: ({ node, ...props }) => (
-            <div className="overflow-x-auto">
-              <table className="min-w-full border-collapse border border-gray-200">
+            <div className="overflow-x-auto my-8">
+              <table className="min-w-full border-collapse border border-gray-300 rounded-lg overflow-hidden">
                 {props.children}
               </table>
             </div>
@@ -34,35 +36,25 @@ const MarkdownContent = ({ content }) => {
           code({ node, inline, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || '');
             return !inline && match ? (
-              <div className="relative">
-              <pre className={`language-${match[1]} p-1 rounded-lg bg-gray-200 text-white overflow-x-auto relative`}>
+              <div className="relative my-6">
+                <SyntaxHighlighter
+                  style={atomDark}
+                  language={match[1]}
+                  PreTag="div"
+                  className="rounded-lg text-sm"
+                  {...props}
+                >
+                  {String(children).replace(/\n$/, '')}
+                </SyntaxHighlighter>
                 <button
-                  className="absolute top-1 right-1 text-sm bg-gray-200 text-white rounded-full px-3 py-1 flex items-center space-x-2 hover:bg-blue-200 transition-colors duration-300 transform hover:scale-105 shadow-lg"
+                  className="absolute top-2 right-2 text-xs bg-gray-700 text-white rounded-md px-2 py-1 opacity-70 hover:opacity-100 transition-opacity duration-200"
                   onClick={() => navigator.clipboard.writeText(children)}
                 >
-                  {/* <span>نسخ</span> */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-4 h-4"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M8 12h8m-4-4v8m8-9a2 2 0 00-2-2H6a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V7z"
-                    />
-                  </svg>
+                  Copy
                 </button>
-                <code className={className} {...props}>
-                  {children}
-                </code>
-              </pre>
-            </div>
+              </div>
             ) : (
-              <code className={`bg-gray-200 rounded p-1 ${className || ''}`} {...props}>
+              <code className="bg-gray-100 text-red-500 rounded px-1 py-0.5" {...props}>
                 {children}
               </code>
             );
@@ -78,45 +70,44 @@ const MarkdownContent = ({ content }) => {
             </a>
           ),
           blockquote: ({ node, ...props }) => (
-            <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-600">
+            <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-700 my-4">
               {props.children}
             </blockquote>
           ),
-          tip: ({ node, ...props }) => (
-            <tip className="border-l-4 border-blue-500 pl-4 italic text-gray-600">
-              {props.children}
-            </tip>
-          ),
           ul: ({ node, ...props }) => (
-            <ul className="list-disc pl-6">
+            <ul className="list-disc pl-6 my-4 space-y-2">
               {props.children}
             </ul>
           ),
           ol: ({ node, ...props }) => (
-            <ol className="list-decimal pl-6">
+            <ol className="list-decimal pl-6 my-4 space-y-2">
               {props.children}
             </ol>
           ),
-          // دعم الفيديوهات
+          h1: ({ node, ...props }) => (
+            <h1 className="text-4xl font-bold mt-8 mb-4 text-gray-800 border-b-2 border-gray-200 pb-2" {...props} />
+          ),
+          h2: ({ node, ...props }) => (
+            <h2 className="text-3xl font-semibold mt-6 mb-3 text-gray-800" {...props} />
+          ),
+          h3: ({ node, ...props }) => (
+            <h3 className="text-2xl font-medium mt-5 mb-2 text-gray-800" {...props} />
+          ),
+          p: ({ node, ...props }) => (
+            <p className="text-lg text-gray-700 leading-relaxed my-4" {...props} />
+          ),
           iframe: ({ node, ...props }) => (
-            <div className="video-container">
+            <div className="my-8">
               <iframe
                 className="w-full h-64 rounded-lg shadow-md"
                 {...props}
-                title="Embedded Video"
+                title="Embedded Content"
                 allowFullScreen
               />
             </div>
           ),
-          // دعم الرسومات التوضيحية
-          svg: ({ node, ...props }) => (
-            <div className="flex justify-center">
-              <svg className="w-full h-auto" {...props} />
-            </div>
-          ),
-          // دعم للرسوم البيانية باستخدام react-chartjs-2
           chart: ({ node, ...props }) => (
-            <div className="my-4">
+            <div className="my-8">
               <Bar
                 data={{
                   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -133,58 +124,19 @@ const MarkdownContent = ({ content }) => {
                   ],
                 }}
                 options={{
-                  maintainAspectRatio: false,
-                  scales: {
-                    y: {
-                      beginAtZero: true,
+                  responsive: true,
+                  plugins: {
+                    legend: {
+                      position: 'top',
                     },
-                  },
+                    title: {
+                      display: true,
+                      text: 'Chart.js Bar Chart'
+                    }
+                  }
                 }}
-                height={400}
               />
             </div>
-          ),
-          // دعم للخرائط التفاعلية باستخدام Google Maps
-          map: ({ node, ...props }) => (
-            <div className="my-4">
-              <iframe
-                className="w-full h-64 rounded-lg shadow-md"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093647!2d144.95373531531828!3d-37.81720997975159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f1f7c9b7%3A0x5045675218ce6e0!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1614857600000!5m2!1sen!2sus"
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-          ),
-          h1: ({ node, ...props }) => (
-            <h1 className="text-3xl font-bold mt-4 mb-2">
-              {props.children}
-            </h1>
-          ),
-          h2: ({ node, ...props }) => (
-            <h2 className="text-2xl font-semibold mt-4 mb-2">
-              {props.children}
-            </h2>
-          ),
-          h3: ({ node, ...props }) => (
-            <h3 className="text-xl font-medium mt-4 mb-2">
-              {props.children}
-            </h3>
-          ),
-          h4: ({ node, ...props }) => (
-            <h4 className="text-lg font-medium mt-4 mb-2">
-              {props.children}
-            </h4>
-          ),
-          h5: ({ node, ...props }) => (
-            <h5 className="text-base font-medium mt-4 mb-2">
-              {props.children}
-            </h5>
-          ),
-          h6: ({ node, ...props }) => (
-            <h6 className="text-sm font-medium mt-4 mb-2">
-              {props.children}
-            </h6>
           ),
         }}
       >
@@ -194,11 +146,10 @@ const MarkdownContent = ({ content }) => {
   );
 };
 
-// مكون لودينج أنيميشن باستخدام react-spinners
 const Loader = () => (
   <div className="flex justify-center items-center h-64">
-    <PuffLoader color="#3498db" size={40} />
+    <PuffLoader color="#3498db" size={60} />
   </div>
 );
 
-export default MarkdownContent;
+export default React.memo(MarkdownContent);

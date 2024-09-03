@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { PaginationContext } from '../contexts/PaginationContext';
 import { Link } from 'react-router-dom';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 const Pagination = () => {
   const { currentPage, previousPage, nextPage } = useContext(PaginationContext);
@@ -10,23 +11,29 @@ const Pagination = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center mt-8">
+    <nav className="flex justify-between items-center mt-12 mb-8">
       {previousPage && (
         <Link 
           to={`/${previousPage}`} 
-          className="flex flex-col items-center p-4 bg-transparent text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition-transform transform hover:scale-105 shadow-lg w-1/3"
+          className="flex items-center p-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg hover:from-blue-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105 shadow-md"
         >
-          <span className="text-2xl font-bold">السابق</span>
-          <span className="text-sm mt-2">{getFileName(previousPage)}</span>
+          <FaArrowLeft className="mr-2" />
+          <span>
+            <span className="block text-sm">السابق</span>
+            <span className="block text-lg font-bold">{getFileName(previousPage)}</span>
+          </span>
         </Link>
       )}
       {nextPage && (
         <Link 
           to={`/${nextPage}`} 
-          className="flex flex-col items-center p-4 bg-transparent text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition-transform transform hover:scale-105 shadow-lg w-1/3"
+          className="flex items-center p-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 shadow-md"
         >
-          <span className="text-2xl font-bold">التالي</span>
-          <span className="text-sm mt-2">{getFileName(nextPage)}</span>
+          <span>
+            <span className="block text-sm">التالي</span>
+            <span className="block text-lg font-bold">{getFileName(nextPage)}</span>
+          </span>
+          <FaArrowRight className="ml-2" />
         </Link>
       )}
     </nav>

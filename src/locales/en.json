@@ -1,4 +1,6 @@
 {
+  "enTranslations":{
+
     "site": {
       "name": "Site Name",
       "description": "Site Description"
@@ -62,3 +64,4 @@
       "goHome": "Go to Home Page"
     }
   }
+}

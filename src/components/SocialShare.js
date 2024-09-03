@@ -8,35 +8,33 @@ const SocialShare = ({ url, title }) => {
   const shareLinks = {
     facebook: {
       link: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
-      icon: <FaFacebook color="#1877F2" />,
-      color: 'hover:opacity-80',
+      icon: <FaFacebook size={24} />,
+      color: 'bg-blue-600 hover:bg-blue-700',
     },
     twitter: {
       link: `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`,
-      icon: <FaTwitter color="#1DA1F2" />,
-      color: 'hover:opacity-80',
+      icon: <FaTwitter size={24} />,
+      color: 'bg-blue-400 hover:bg-blue-500',
     },
     linkedin: {
       link: `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`,
-      icon: <FaLinkedin color="#0A66C2" />,
-      color: 'hover:opacity-80',
+      icon: <FaLinkedin size={24} />,
+      color: 'bg-blue-700 hover:bg-blue-800',
     },
   };
 
   return (
-    <div className="flex space-x-4">
+    <div className="flex space-x-4 my-6">
       {Object.entries(shareLinks).map(([platform, { link, icon, color }]) => (
         <a
           key={platform}
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className={`transition-transform transform hover:scale-110 ${color}`}
+          className={`transition-all duration-300 transform hover:scale-110 ${color} text-white p-3 rounded-full shadow-lg`}
           aria-label={t('shareOnAriaLabel', { platform })}
         >
-          <div className="p-2 bg-white rounded-full shadow-lg">
-            {icon}
-          </div>
+          {icon}
         </a>
       ))}
     </div>
