@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { PaginationContext } from '../contexts/PaginationContext';
+import { FaFolder, FaFolderOpen, FaFileAlt } from 'react-icons/fa'; // استيراد الأيقونات
 
 const NestedList = ({ items, basePath = '' }) => {
   const location = useLocation();
@@ -20,14 +21,27 @@ const NestedList = ({ items, basePath = '' }) => {
       {items.map((item, index) => (
         <li key={index} className="my-2">
           {item.type === 'directory' ? (
-            <details>
-              <summary className="cursor-pointer font-bold">{item.name}</summary>
-              {/* <NestedList items={item.children || []} basePath={`${basePath}/${item.name}`} /> */}
-              <NestedList items={item.children || []}  />
+            <details className="group">
+              <summary className="cursor-pointer font-bold flex items-center space-x-2 text-purple-600">
+                <span className="group-open:hidden">
+                  <FaFolder size={16} />
+                </span>
+                <span className="hidden group-open:inline">
+                  <FaFolderOpen size={16} />
+                </span>
+                <span>{item.name}</span>
+              </summary>
+              <div className="ml-4 mt-2 border-l-2 border-purple-300 pl-4">
+                <NestedList items={item.children || []} />
+              </div>
             </details>
           ) : (
-            <Link to={`${basePath}/${item.path}`} className="text-blue-600 hover:underline">
-              {item.name.replace('.md', '')}
+            <Link 
+              to={`${basePath}/${item.path}`} 
+              className="flex items-center space-x-2 text-blue-600 hover:text-blue-800 transition-colors duration-200"
+            >
+              <FaFileAlt size={16} />
+              <span>{item.name.replace('.md', '')}</span>
             </Link>
           )}
         </li>
@@ -53,8 +67,8 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <aside className="bg-gray-100 p-4 w-64 overflow-auto">
-      <h2 className="text-xl font-bold mb-4">المحتويات</h2>
+    <aside className="bg-gradient-to-r from-gray-100 to-gray-200 p-5 w-64 overflow-auto shadow-lg rounded-lg">
+      <h2 className="text-2xl font-bold text-purple-700 mb-4">المحتويات</h2>
       <NestedList items={structure} />
     </aside>
   );

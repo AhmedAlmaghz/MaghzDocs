@@ -8,18 +8,18 @@ const SocialShare = ({ url, title }) => {
   const shareLinks = {
     facebook: {
       link: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
-      icon: <FaFacebook />,
-      color: 'text-blue-600 hover:text-blue-800',
+      icon: <FaFacebook color="#1877F2" />,
+      color: 'hover:opacity-80',
     },
     twitter: {
       link: `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`,
-      icon: <FaTwitter />,
-      color: 'text-blue-400 hover:text-blue-600',
+      icon: <FaTwitter color="#1DA1F2" />,
+      color: 'hover:opacity-80',
     },
     linkedin: {
       link: `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`,
-      icon: <FaLinkedin />,
-      color: 'text-blue-700 hover:text-blue-900',
+      icon: <FaLinkedin color="#0A66C2" />,
+      color: 'hover:opacity-80',
     },
   };
 

@@ -35,18 +35,32 @@ const MarkdownContent = ({ content }) => {
             const match = /language-(\w+)/.exec(className || '');
             return !inline && match ? (
               <div className="relative">
-                <pre className={`language-${match[1]} p-2 rounded-lg bg-gray-800 text-white overflow-x-auto`}>
-                  <button
-                    className="absolute top-2 right-2 text-sm bg-gray-700 text-white rounded px-2 py-1"
-                    onClick={() => navigator.clipboard.writeText(children)}
+              <pre className={`language-${match[1]} p-1 rounded-lg bg-gray-200 text-white overflow-x-auto relative`}>
+                <button
+                  className="absolute top-1 right-1 text-sm bg-gray-200 text-white rounded-full px-3 py-1 flex items-center space-x-2 hover:bg-blue-200 transition-colors duration-300 transform hover:scale-105 shadow-lg"
+                  onClick={() => navigator.clipboard.writeText(children)}
+                >
+                  {/* <span>نسخ</span> */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    className="w-4 h-4"
                   >
-                    نسخ
-                  </button>
-                  <code className={className} {...props}>
-                    {children}
-                  </code>
-                </pre>
-              </div>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M8 12h8m-4-4v8m8-9a2 2 0 00-2-2H6a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V7z"
+                    />
+                  </svg>
+                </button>
+                <code className={className} {...props}>
+                  {children}
+                </code>
+              </pre>
+            </div>
             ) : (
               <code className={`bg-gray-200 rounded p-1 ${className || ''}`} {...props}>
                 {children}
