@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaFacebook, FaTwitter, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 const links = [
   { url: 'https://facebook.com/MaghzDocs', icon: <FaFacebook color="#1877F2" />, platform: 'Facebook' },
@@ -11,7 +12,7 @@ const links = [
 
 const SocialMedia = () => {
   const { t } = useTranslation();
-
+  const { direction } = useContext(ThemeContext);
   return (
     <div className="flex space-x-4">
       {links.map((link, index) => (
@@ -21,9 +22,9 @@ const SocialMedia = () => {
           target="_blank" 
           rel="noopener noreferrer" 
           aria-label={t('socialMediaAriaLabel', { platform: link.platform })}
-          className="hover:opacity-80 transition duration-300 transform hover:-translate-y-1 hover:scale-110"
+          className={` hover:opacity-80 transition duration-300 transform hover:-translate-y-1 hover:scale-110 ${direction==='rtl'? 'ml-2' :''} `}
         >
-          <span className="text-2xl">
+          <span className="text-2xl" >
             {link.icon}
           </span>
         </a>

@@ -6,12 +6,13 @@ import processMarkdown from '../utils/markdown';
 import ScrollButtons from '../components/ScrollButtons';
 import SocialShare from '../components/SocialShare';
 import Pagination from '../components/Pagination';
-import SkeletonLoader from '../components/SkeletonLoader';
-import Comments from '../components/Comments';
-import TableOfContents from '../components/TableOfContents';
-import PrintButton from '../components/PrintButton';
+// import SkeletonLoader from '../components/SkeletonLoader';
+// import Comments from '../components/Comments';
+// import TableOfContents from '../components/TableOfContents';
+
 import SharePage from '../components/SharePage';
 import Rating from '../components/Rating';
+
 // import useCache from '../hooks/useCache';
 
 const PageIndex = () => {
@@ -70,18 +71,23 @@ const PageIndex = () => {
       <div className="mx-auto px-4 py-8">
         <SharePage url={window.location.href} title={title} />
         <h1 className="text-3xl font-bold mb-6">{title}</h1>
-        <TableOfContents />
-        <MarkdownContent content={memoizedPost.content} />
-        <ScrollButtons />
-        <div className="mt-8">
-          <PrintButton />
-          <Rating onRate={(rating) => console.log('Rated:', rating)} />
-          <SocialShare url={window.location.href} title={title} />
+        
+        <MarkdownContent id="MarkdownContent" content={memoizedPost.content} />
+        
+        {/* <TableOfContents htmlContent={`${document.getElementsByName('MarkdownContent')}`} /> */}
+        <div className="flex flex-row items-center justify-center m-8 space-x-2">
+            <div className="flex items-center space-x-2">
+                <SocialShare />
+                {/* <Rating onRate={(rating) => console.log('Rated:', rating)} /> */}
+            </div>
         </div>
+       
+
         <div className="mt-8">
           <Pagination />
         </div>
-        <Comments postId={slug} />
+        {/* <Comments postId={slug} /> */}
+        <ScrollButtons />
       </div>
     </>
   );

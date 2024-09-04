@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-const SettingsContext = createContext();
+export const SettingsContext = createContext();
 
 export const useSettings = () => {
   const context = useContext(SettingsContext);

@@ -1,9 +1,11 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaFacebook, FaTwitter, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 const SharePage = ({ url, title }) => {
   const { t } = useTranslation();
+  const { direction } = useContext(ThemeContext);
 
   const shareLinks = [
     {
@@ -36,7 +38,7 @@ const SharePage = ({ url, title }) => {
           href={link.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-600 hover:text-blue-500 transition duration-300"
+          className={` text-gray-600 hover:text-blue-500 transition duration-300 ${direction==='rtl'? 'ml-4' :''} `}
           aria-label={t('shareTo', { platform: link.name })}
         >
           {link.icon}
