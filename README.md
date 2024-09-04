@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Maghz Docs
+هو عبارة عن تطبيق React & TailwindCSS مفتوح المصدر يقوم ببناء موقع ويب يمكن إستخدامه كمدونة أو توثيق .
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+الموقع يقوم بقراءة صفحاته بشكل آلي من ملفات Markdown .
 
-## Available Scripts
+يمكن إستضافته على مزودات الخدمات المجانية مثل firebase, netfily, vercal, github pages,... وغيرها.
 
-In the project directory, you can run:
+سريع وخفيف وأنيق وعملي.
 
-### `npm start`
+## كيف يعمل
+1- انسخ ملفات .md إلى مجلد `public/markdown/` في مجلد التطبيق.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2- نفذ أمر بناء التطبيق `npm run build`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3- إرفع ملفاتك إلى الإستضافة الخاصة بك. 
 
-### `npm test`
+ مبروك أصبح موقعك جاهز !!!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Getting Started البدء
+### انسخ المستودع
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/AhmedAlmaghz/MaghzDocs.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+cd MaghzDocs
+```
+### تثبيت التبعيات
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
 
-### `npm run eject`
+```
+### انسخ ملفات md إلى المجلد `public/markdown`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Copy Files to `public/markdown` folder
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### تشغيل التطبيق في وضع التطوير
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm run dev
+```
+إفتح الرابط : [http://localhost:3000](http://localhost:3000)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Build Application  بناء التطبيق للإنتاج
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm run build
+```
 
-### Code Splitting
+## إنشاء ملف قائمة صفحات الموقع
+طبعا عندما تقوم بتنفيذ الأمر `npm run build` يقوم التطبيق ببناء ملف `public/markdown/structure.json` بشكل آلي مع الإنشاء إعتماداً على بمتية الملفات والمجلدات في المجلد الرئيسي `public/markdown`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+إذا اردت بناء ملف مخطط الصفحات `public/markdown/structure.json` بشكل منفصل دون بناء التطبيق نفذ الامر التالي:
 
-### Analyzing the Bundle Size
+```bash
+npm run generate-index
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+تستطيع تحرير الملف `public/markdown/structure.json` يدوياً وتغيير بنيته حسب ما تريد دون الإعتماد على بنية الملفات والمجلدات في مجلد `markdown` 
+في الملف `public/markdown/structure.json` يتم إستخدام اسم الملف ومساره تسستطيع تحريرة وتغيير أسماء الروابط كما تريد دون الإعتماد على اسم الملف الافتراضي وكذلك تغيير هيكل خريطة الموقع فروابط الموقع يتم قراتها من الملف `public/markdown/structure.json` اسم الرابط وعنوان الرابط وكذلك المجلد عبارة عن التصنيف الرئيسي للملفات التي بداخله
 
-### Making a Progressive Web App
+## Demo شاهد
+[Demo MaghzDocs](https://AhmedAlmaghz.github.io/MaghzDocs)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Maghz Docs](./public/images/maghz-docs.png)
+![Maghz Docs](./public/images/maghz-docs-index.png)
+![Maghz Docs](./public/images/maghz-docs-footer.png)
