@@ -1,0 +1,137 @@
+[
+  {
+    "name": "amp",
+    "path": "/markdown/torch-XLA/amp",
+    "type": "file"
+  },
+  {
+    "name": "bazel",
+    "path": "/markdown/torch-XLA/bazel",
+    "type": "file"
+  },
+  {
+    "name": "ddp",
+    "path": "/markdown/torch-XLA/ddp",
+    "type": "file"
+  },
+  {
+    "name": "dynamic shape",
+    "path": "/markdown/torch-XLA/dynamic_shape",
+    "type": "file"
+  },
+  {
+    "name": "dynamo",
+    "path": "/markdown/torch-XLA/dynamo",
+    "type": "file"
+  },
+  {
+    "name": "eager",
+    "path": "/markdown/torch-XLA/eager",
+    "type": "file"
+  },
+  {
+    "name": "first steps",
+    "path": "/markdown/torch-XLA/first_steps",
+    "type": "file"
+  },
+  {
+    "name": "fori loop",
+    "path": "/markdown/torch-XLA/fori_loop",
+    "type": "file"
+  },
+  {
+    "name": "fsdp",
+    "path": "/markdown/torch-XLA/fsdp",
+    "type": "file"
+  },
+  {
+    "name": "fsdpv2",
+    "path": "/markdown/torch-XLA/fsdpv2",
+    "type": "file"
+  },
+  {
+    "name": "glossry",
+    "path": "/markdown/torch-XLA/glossry",
+    "type": "file"
+  },
+  {
+    "name": "gpu",
+    "path": "/markdown/torch-XLA/gpu",
+    "type": "file"
+  },
+  {
+    "name": "kubernetes",
+    "path": "/markdown/torch-XLA/kubernetes",
+    "type": "file"
+  },
+  {
+    "name": "openxla",
+    "path": "/markdown/torch-XLA/openxla",
+    "type": "file"
+  },
+  {
+    "name": "pallas",
+    "path": "/markdown/torch-XLA/pallas",
+    "type": "file"
+  },
+  {
+    "name": "pjrt",
+    "path": "/markdown/torch-XLA/pjrt",
+    "type": "file"
+  },
+  {
+    "name": "plugins",
+    "path": "/markdown/torch-XLA/plugins",
+    "type": "file"
+  },
+  {
+    "name": "quantized ops",
+    "path": "/markdown/torch-XLA/quantized_ops",
+    "type": "file"
+  },
+  {
+    "name": "README",
+    "path": "/markdown/torch-XLA/README",
+    "type": "file"
+  },
+  {
+    "name": "spmd advanced",
+    "path": "/markdown/torch-XLA/spmd_advanced",
+    "type": "file"
+  },
+  {
+    "name": "spmd basic",
+    "path": "/markdown/torch-XLA/spmd_basic",
+    "type": "file"
+  },
+  {
+    "name": "spmd distributed_checkpoint",
+    "path": "/markdown/torch-XLA/spmd_distributed_checkpoint",
+    "type": "file"
+  },
+  {
+    "name": "spmd gpu",
+    "path": "/markdown/torch-XLA/spmd_gpu",
+    "type": "file"
+  },
+  {
+    "name": "stablehlo",
+    "path": "/markdown/torch-XLA/stablehlo",
+    "type": "file"
+  },
+  {
+    "name": "triton",
+    "path": "/markdown/torch-XLA/triton",
+    "type": "file"
+  },
+  {
+    "name": "workflow",
+    "path": "/markdown/torch-XLA/workflow",
+    "type": "file"
+  },
+  {
+    "name": "_static",
+    "path": "/markdown/torch-XLA\\_static",
+    "type": "directory"
+  }
+]

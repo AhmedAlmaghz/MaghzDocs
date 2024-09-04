@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
+import i18n from '../i18n';
 import { FaSun, FaMoon, FaArrowRight, FaArrowLeft, FaGlobe } from 'react-icons/fa';
 import { ThemeContext } from '../contexts/ThemeContext';
 
 const Theme = () => {
   const { theme, toggleTheme, direction, toggleDirection } = useContext(ThemeContext);
-  const { i18n, t } = useTranslation();
+  const { t } = useTranslation();
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'en' ? 'ar' : 'en';

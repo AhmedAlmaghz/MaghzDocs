@@ -16,7 +16,7 @@ async function addFrontmatterToFile(filePath) {
 
   const frontmatter = `---
 title: ${title}
-description: ${description}
+description: ''
 date: ${date}
 ---
 

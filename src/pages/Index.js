@@ -68,7 +68,7 @@ const PageIndex = () => {
         <meta name="description" content={memoizedPost.frontmatter.description || ''} />
       </Helmet>
       {/* <div className="max-w-3xl mx-auto px-4 py-8"> */}
-      <div className="mx-auto px-4 py-8">
+      <div className="mx-auto px-16 py-8">
         <SharePage url={window.location.href} title={title} />
         <h1 className="text-3xl font-bold mb-6">{title}</h1>
         

@@ -1,12 +1,13 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
+import i18n from '../i18n';
 
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState('light');
   const [direction, setDirection] = useState('ltr');
-  const { i18n } = useTranslation();
+  // const { t } = useTranslation();
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'light';

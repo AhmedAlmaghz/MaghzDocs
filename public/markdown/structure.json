@@ -542,5 +542,152 @@
         "path": "pages/index"
       }
     ]
+  },
+  {
+    "name": "torch-XLA",
+    "type": "directory",
+    "children": [
+      {
+        "name": "amp",
+        "type": "file",
+        "path": "torch-XLA/amp"
+      },
+      {
+        "name": "bazel",
+        "type": "file",
+        "path": "torch-XLA/bazel"
+      },
+      {
+        "name": "ddp",
+        "type": "file",
+        "path": "torch-XLA/ddp"
+      },
+      {
+        "name": "dynamic shape",
+        "type": "file",
+        "path": "torch-XLA/dynamic_shape"
+      },
+      {
+        "name": "dynamo",
+        "type": "file",
+        "path": "torch-XLA/dynamo"
+      },
+      {
+        "name": "eager",
+        "type": "file",
+        "path": "torch-XLA/eager"
+      },
+      {
+        "name": "first steps",
+        "type": "file",
+        "path": "torch-XLA/first_steps"
+      },
+      {
+        "name": "fori loop",
+        "type": "file",
+        "path": "torch-XLA/fori_loop"
+      },
+      {
+        "name": "fsdp",
+        "type": "file",
+        "path": "torch-XLA/fsdp"
+      },
+      {
+        "name": "fsdpv2",
+        "type": "file",
+        "path": "torch-XLA/fsdpv2"
+      },
+      {
+        "name": "glossry",
+        "type": "file",
+        "path": "torch-XLA/glossry"
+      },
+      {
+        "name": "gpu",
+        "type": "file",
+        "path": "torch-XLA/gpu"
+      },
+      {
+        "name": "kubernetes",
+        "type": "file",
+        "path": "torch-XLA/kubernetes"
+      },
+      {
+        "name": "openxla",
+        "type": "file",
+        "path": "torch-XLA/openxla"
+      },
+      {
+        "name": "pallas",
+        "type": "file",
+        "path": "torch-XLA/pallas"
+      },
+      {
+        "name": "pjrt",
+        "type": "file",
+        "path": "torch-XLA/pjrt"
+      },
+      {
+        "name": "plugins",
+        "type": "file",
+        "path": "torch-XLA/plugins"
+      },
+      {
+        "name": "quantized ops",
+        "type": "file",
+        "path": "torch-XLA/quantized_ops"
+      },
+      {
+        "name": "README",
+        "type": "file",
+        "path": "torch-XLA/README"
+      },
+      {
+        "name": "spmd advanced",
+        "type": "file",
+        "path": "torch-XLA/spmd_advanced"
+      },
+      {
+        "name": "spmd basic",
+        "type": "file",
+        "path": "torch-XLA/spmd_basic"
+      },
+      {
+        "name": "spmd distributed_checkpoint",
+        "type": "file",
+        "path": "torch-XLA/spmd_distributed_checkpoint"
+      },
+      {
+        "name": "spmd gpu",
+        "type": "file",
+        "path": "torch-XLA/spmd_gpu"
+      },
+      {
+        "name": "stablehlo",
+        "type": "file",
+        "path": "torch-XLA/stablehlo"
+      },
+      {
+        "name": "triton",
+        "type": "file",
+        "path": "torch-XLA/triton"
+      },
+      {
+        "name": "workflow",
+        "type": "file",
+        "path": "torch-XLA/workflow"
+      },
+      {
+        "name": "_static",
+        "type": "directory",
+        "children": [
+          {
+            "name": "img",
+            "type": "directory",
+            "children": []
+          }
+        ]
+      }
+    ]
   }
 ]
