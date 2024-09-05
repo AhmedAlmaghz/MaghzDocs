@@ -63,7 +63,7 @@ npm run generate-index
 في الملف `public/markdown/structure.json` يتم إستخدام اسم الملف ومساره تسستطيع تحريرة وتغيير أسماء الروابط كما تريد دون الإعتماد على اسم الملف الافتراضي وكذلك تغيير هيكل خريطة الموقع فروابط الموقع يتم قراتها من الملف `public/markdown/structure.json` اسم الرابط وعنوان الرابط وكذلك المجلد عبارة عن التصنيف الرئيسي للملفات التي بداخله
 
 ## Demo شاهد
-[Demo MaghzDocs](https://AhmedAlmaghz.github.io/MaghzDocs)
+[Demo MaghzDocs](https://transformers.web.app)
 
 ![Maghz Docs](./public/images/maghz-docs.png)
 ![Maghz Docs](./public/images/maghz-docs-index.png)
