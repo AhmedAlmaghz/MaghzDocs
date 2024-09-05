@@ -5,7 +5,7 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { ThemeContext } from '../contexts/ThemeContext';
 
 const Pagination = () => {
-  const { currentPage, previousPage, nextPage } = useContext(PaginationContext);
+  const { currentPage, previousPage, nextPage, previousPageTitle, nextPageTitle } = useContext(PaginationContext);
   const { direction } = useContext(ThemeContext);
 
   const getFileName = (path) => {
@@ -27,7 +27,8 @@ const Pagination = () => {
           
           <span>
             <span className="block text-sm">السابق</span>
-            <span className="block text-lg font-bold">{getFileName(previousPage)}</span>
+            <span className="block text-lg font-bold">{previousPageTitle}</span>
+            {/* <span className="block text-lg font-bold">{getFileName(previousPage)}</span> */}
           </span>
         </Link>
       )}
@@ -38,7 +39,8 @@ const Pagination = () => {
         >
           <span>
             <span className="block text-sm">التالي</span>
-            <span className="block text-lg font-bold">{getFileName(nextPage)}</span>
+            <span className="block text-lg font-bold">{nextPageTitle}</span>
+            {/* <span className="block text-lg font-bold">{getFileName(nextPage)}</span> */}
           </span>
           {direction==='rtl'? (
             <FaArrowLeft className="mr-2" />

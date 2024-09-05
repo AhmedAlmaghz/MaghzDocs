@@ -208,7 +208,7 @@ import { ThemeContext } from '../contexts/ThemeContext';
 
 const NestedList = ({ items, basePath = '' }) => {
   const location = useLocation();
-  const { setCurrentPage, setPreviousPage, setNextPage } = useContext(PaginationContext);
+  const { setCurrentPage, setPreviousPage, setNextPage,setCurrentPageTitle, setPreviousPageTitle, setNextPageTitle } = useContext(PaginationContext);
   const { direction } = useContext(ThemeContext);
  
 
@@ -220,8 +220,11 @@ const NestedList = ({ items, basePath = '' }) => {
       setCurrentPage(items[currentIndex].path);
       setPreviousPage(currentIndex > 0 ? items[currentIndex - 1].path : null);
       setNextPage(currentIndex < items.length - 1 ? items[currentIndex + 1].path : null);
+      setCurrentPageTitle(items[currentIndex].name);
+      setPreviousPageTitle(currentIndex > 0 ? items[currentIndex - 1].name : null);
+      setNextPageTitle(currentIndex < items.length - 1 ? items[currentIndex + 1].name : null);
     }
-  }, [location.pathname, items, setCurrentPage, setPreviousPage, setNextPage]);
+  }, [location.pathname, items, setCurrentPage, setPreviousPage, setNextPage,setCurrentPageTitle, setPreviousPageTitle, setNextPageTitle]);
 
   return (
     <ul className={` ${direction === 'rtl' ? 'pr-2' : 'pl-2'}`}>

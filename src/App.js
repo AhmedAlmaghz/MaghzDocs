@@ -11,6 +11,7 @@ import SkipToContent from './components/SkipToContent';
 
 const Home = lazy(() => import('./pages/Home'));
 const PageIndex = lazy(() => import('./pages/Index'));
+const PageIndexGithub = lazy(() => import('./pages/IndexGithub'));
 const Settings = lazy(() => import('./pages/Settings'));
 const AdvancedSearch = lazy(() => import('./components/AdvancedSearch'));
 
@@ -28,6 +29,7 @@ function App() {
                     <Routes>
                       <Route path="/" element={<Home />} />
                       <Route path="/*" element={<PageIndex />} />
+                      <Route path="/github/*" element={<PageIndexGithub />} />
                       <Route path="/settings" element={<Settings />} />
                       <Route path="/search" element={<AdvancedSearch />} />
                     </Routes>
