@@ -1,7 +1,7 @@
 ---
 title: Run_scripts
-description: ''
-date: 2024-09-04
+description:
+date: 2024-09-06
 ---
 
 # التدريب باستخدام نص برمجى

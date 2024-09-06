@@ -8,9 +8,9 @@ const Pagination = () => {
   const { currentPage, previousPage, nextPage, previousPageTitle, nextPageTitle } = useContext(PaginationContext);
   const { direction } = useContext(ThemeContext);
 
-  const getFileName = (path) => {
-    return path ? path.split('/').pop().replace('.md', '') : '';
-  };
+  // const getFileName = (path) => {
+  //   return path ? path.split('/').pop().replace('.md', '') : '';
+  // };
 
   return (
     <nav className="flex justify-between items-center mt-12 mb-8">

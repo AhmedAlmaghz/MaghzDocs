@@ -106,7 +106,7 @@
 
 import React, { useState } from 'react';
 import yaml from 'js-yaml';
-import axios from 'axios';
+
 
 const Settings = () => {
   const [yamlData, setYamlData] = useState('');

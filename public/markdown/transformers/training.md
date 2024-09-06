@@ -1,7 +1,7 @@
 ---
 title: Training
-description: ''
-date: 2024-09-04
+description:
+date: 2024-09-06
 ---
 
 # ضبط نموذج مُدرب مسبقًا

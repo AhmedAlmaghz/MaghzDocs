@@ -1,7 +1,7 @@
 ---
 title: Glossary
-description: ''
-date: 2024-09-04
+description:
+date: 2024-09-06
 ---
 
 # قاموس المصطلحات

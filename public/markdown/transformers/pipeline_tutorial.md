@@ -1,7 +1,7 @@
 ---
 title: Pipeline_tutorial
-description: ''
-date: 2024-09-04
+description:
+date: 2024-09-06
 ---
 
 # خطوط الأنابيب الاستدلال

@@ -1,7 +1,7 @@
 ---
 title: Accelerate
-description: ''
-date: 2024-09-04
+description:
+date: 2024-09-06
 ---
 
 # التدريب الموزع باستخدام  🤗 Accelerate

@@ -10,17 +10,17 @@
           {
             "name": "🤗 المحولات",
             "type": "file",
-            "path": "docs/source/ar/index"
+            "path": "transformers/index"
           },
           {
             "name": "جولة سريعة",
             "type": "file",
-            "path": "docs/source/ar/quicktour"
+            "path": "transformers/quicktour"
           },
           {
             "name": "التثبيت",
             "type": "file",
-            "path": "docs/source/ar/installation"
+            "path": "transformers/installation"
           }
         ]
       },
@@ -31,37 +31,57 @@
           {
             "name": "تشغيل الاستنتاج باستخدام خطوط الأنابيب",
             "type": "file",
-            "path": "docs/source/ar/pipeline_tutorial"
+            "path": "transformers/pipeline_tutorial"
           },
           {
             "name": "كتابة تعليمات برمجية متكيفه باستخدام AutoClass",
             "type": "file",
-            "path": "docs/source/ar/autoclass_tutorial"
+            "path": "transformers/autoclass_tutorial"
           },
           {
             "name": "معالجة البيانات مسبقًا",
             "type": "file",
-            "path": "docs/source/ar/preprocessing"
+            "path": "transformers/preprocessing"
           },
           {
             "name": "ضبط نموذج مسبق التدريب",
             "type": "file",
-            "path": "docs/source/ar/training"
+            "path": "transformers/training"
           },
           {
             "name": "التدريب باستخدام نص برمجي",
             "type": "file",
-            "path": "docs/source/ar/run_scripts"
+            "path": "transformers/run_scripts"
           },
           {
             "name": "إعداد تدريب موزع باستخدام 🤗 Accelerate",
             "type": "file",
-            "path": "docs/source/ar/accelerate"
+            "path": "transformers/accelerate"
           },
           {
             "name": "تحميل النماذج المخصصة وتدريبها باستخدام 🤗 PEFT",
             "type": "file",
-            "path": "docs/source/ar/peft"
+            "path": "transformers/peft"
+          },
+          {
+            "name": "مشاركة نموذجك",
+            "type": "file",
+            "path": "transformers/model_sharing"
+          },
+          {
+            "name": "الوكلاء",
+            "type": "file",
+            "path": "transformers/agents"
+          },
+          {
+            "name": "التوليد باستخدام LLMs",
+            "type": "file",
+            "path": "transformers/llm_tutorial"
+          },
+          {
+            "name": "الدردشة مع المحولات",
+            "type": "file",
+            "path": "transformers/conversations"
           }
         ]
       },
@@ -72,7 +92,7 @@
           {
             "name": "(قاموس المصطلحات (قائمة الكلمات",
             "type": "file",
-            "path": "docs/source/ar/glossary"
+            "path": "transformers/glossary"
           }
         ]
       }
