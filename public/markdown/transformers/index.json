@@ -1,0 +1,77 @@
+[
+  {
+    "name": "accelerate",
+    "path": "/markdown/transformers/accelerate",
+    "type": "file"
+  },
+  {
+    "name": "agents",
+    "path": "/markdown/transformers/agents",
+    "type": "file"
+  },
+  {
+    "name": "autoclass tutorial",
+    "path": "/markdown/transformers/autoclass_tutorial",
+    "type": "file"
+  },
+  {
+    "name": "conversations",
+    "path": "/markdown/transformers/conversations",
+    "type": "file"
+  },
+  {
+    "name": "glossary",
+    "path": "/markdown/transformers/glossary",
+    "type": "file"
+  },
+  {
+    "name": "index",
+    "path": "/markdown/transformers/index",
+    "type": "file"
+  },
+  {
+    "name": "installation",
+    "path": "/markdown/transformers/installation",
+    "type": "file"
+  },
+  {
+    "name": "llm tutorial",
+    "path": "/markdown/transformers/llm_tutorial",
+    "type": "file"
+  },
+  {
+    "name": "model sharing",
+    "path": "/markdown/transformers/model_sharing",
+    "type": "file"
+  },
+  {
+    "name": "peft",
+    "path": "/markdown/transformers/peft",
+    "type": "file"
+  },
+  {
+    "name": "pipeline tutorial",
+    "path": "/markdown/transformers/pipeline_tutorial",
+    "type": "file"
+  },
+  {
+    "name": "preprocessing",
+    "path": "/markdown/transformers/preprocessing",
+    "type": "file"
+  },
+  {
+    "name": "quicktour",
+    "path": "/markdown/transformers/quicktour",
+    "type": "file"
+  },
+  {
+    "name": "run scripts",
+    "path": "/markdown/transformers/run_scripts",
+    "type": "file"
+  },
+  {
+    "name": "training",
+    "path": "/markdown/transformers/training",
+    "type": "file"
+  }
+]

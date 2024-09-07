@@ -211,6 +211,7 @@ date: ${date}
                 JSON.stringify(structure, null, 2)
             );
             console.log('All Markdown files have been downloaded and structure.json has been generated.');
+            structureYml=true;
         }else {
             // ابدأ بتنزيل ملفات Markdown من الدليل المحدد في GitHub وبناء البنية
             const structureYml = await downloadYmlStructure();

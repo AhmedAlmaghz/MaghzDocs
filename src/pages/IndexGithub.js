@@ -17,24 +17,14 @@ const PageIndexGithub = () => {
 
   useEffect(() => {
     const fetchPostFromGitHub = async () => {
-      const repoOwner = 'AhmedAlmaghz'; // اسم مالك المستودع
-      const repoName = 'transformers'; // اسم المستودع
+      const owner = 'AhmedAlmaghz'; // اسم مالك المستودع
+      const repo = 'transformers'; // اسم المستودع
       const branch = 'Add_docs_source_ar__toctree.yml'; // الفرع الذي تريد القراءة منه
       const folderPath = 'docs/source/ar'; // مسار المجلد الذي يحتوي على ملفات Markdown
       const filePath = `${folderPath}${slug}.md`;
 
       try {
-        const response = await axios.get(
-          `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`,
-          {
-            headers: {
-              'Authorization': `token ${process.env.REACT_APP_GITHUB_TOKEN}` // توكن GitHub الشخصي للمصادقة
-            },
-            params: {
-              ref: branch
-            }
-          }
-        );
+        const response = await axios.get(`https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${filePath}`);
 
         const content = atob(response.data.content); // Decode the base64 content
         const { frontmatter, content: markdownContent } = processMarkdown(content);
