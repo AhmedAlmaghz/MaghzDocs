@@ -37,6 +37,8 @@ const PageIndex = () => {
   
   useEffect(() => {
     const filePath='/markdown/'+slug+'.md';
+    // const filePath='/html/'+slug+'.html';
+    // const filePath=slug;//+'.html';
     const fetchPost = async () => {
       try {
         const { frontmatter, content } = await processMarkdown(filePath);

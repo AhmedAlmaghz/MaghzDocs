@@ -270,6 +270,7 @@ const Sidebar = () => {
     const fetchStructure = async () => {
       try {
         const response = await fetch('/markdown/structure.json');
+        // const response = await fetch('/html/structure.json');
         const data = await response.json();
         setStructure(data);
       } catch (error) {

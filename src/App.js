@@ -17,30 +17,30 @@ const AdvancedSearch = lazy(() => import('./components/AdvancedSearch'));
 
 function App() {
   return (
-    <HelmetProvider>
-      <ErrorBoundary>
-        <SettingsProvider>
-          <ThemeProvider>
-            <PaginationProvider>
-              <BrowserRouter>
+    <BrowserRouter>
+      <HelmetProvider>
+        <ErrorBoundary>
+          <SettingsProvider>
+            <ThemeProvider>
+              <PaginationProvider>
                 <SkipToContent />
                 <Layout>
                   <Suspense fallback={<Loading />}>
                     <Routes>
                       <Route path="/" element={<Home />} />
                       <Route path="/*" element={<PageIndex />} />
-                      <Route path="/github/*" element={<PageIndexGithub />} />
+                      {/* <Route path="/github/*" element={<PageIndexGithub />} /> */}
                       <Route path="/settings" element={<Settings />} />
                       <Route path="/search" element={<AdvancedSearch />} />
                     </Routes>
                   </Suspense>
                 </Layout>
-              </BrowserRouter>
-            </PaginationProvider>
-          </ThemeProvider>
-        </SettingsProvider>
-      </ErrorBoundary>
-    </HelmetProvider>
+              </PaginationProvider>
+            </ThemeProvider>
+          </SettingsProvider>
+        </ErrorBoundary>
+      </HelmetProvider>
+    </BrowserRouter>
   );
 }
 
