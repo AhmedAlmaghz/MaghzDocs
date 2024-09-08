@@ -54,14 +54,14 @@ const MarkdownContent = ({ content }) => {
                 </button>
               </div>
             ) : (
-              <code className="bg-gray-100 text-red-500 rounded px-1 py-0.5" {...props}>
+              <code className="bg-gray-100 dark:bg-gray-300 text-red-900 rounded px-1 py-0.5" {...props}>
                 {children}
               </code>
             );
           },
           a: ({ node, ...props }) => (
             <a
-              className="text-blue-600 hover:underline"
+              className="text-blue-800 hover:underline"
               {...props}
               target="_blank"
               rel="noopener noreferrer"
@@ -70,7 +70,7 @@ const MarkdownContent = ({ content }) => {
             </a>
           ),
           blockquote: ({ node, ...props }) => (
-            <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-700 my-4">
+            <blockquote className="border-l-4 border-blue-500 pl-4 italic bg-gray-100 my-4">
               {props.children}
             </blockquote>
           ),
@@ -85,16 +85,16 @@ const MarkdownContent = ({ content }) => {
             </ol>
           ),
           h1: ({ node, ...props }) => (
-            <h1 className="text-4xl font-bold mt-8 mb-4 text-gray-800 border-b-2 border-gray-200 pb-2" {...props} />
+            <h1 className="text-4xl font-bold mt-8 mb-4  border-b-2 border-gray-200 pb-2" {...props} />
           ),
           h2: ({ node, ...props }) => (
-            <h2 className="text-3xl font-semibold mt-6 mb-3 text-gray-800" {...props} />
+            <h2 className="text-3xl font-semibold mt-6 mb-3 " {...props} />
           ),
           h3: ({ node, ...props }) => (
-            <h3 className="text-2xl font-medium mt-5 mb-2 text-gray-800" {...props} />
+            <h3 className="text-2xl font-medium mt-5 mb-2 " {...props} />
           ),
           p: ({ node, ...props }) => (
-            <p className="text-lg text-gray-700 leading-relaxed my-4" {...props} />
+            <p className=" leading-relaxed my-4" {...props} />
           ),
           iframe: ({ node, ...props }) => (
             <div className="my-8">

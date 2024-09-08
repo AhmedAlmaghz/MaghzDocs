@@ -17,12 +17,12 @@ const Home = () => {
 
   return (
     <>
-      <SEO 
+      <SEO
         title={t('home.title')}
         description={t('home.description')}
         keywords={t('home.keywords')}
       />
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="home-container">
         <h1 className="text-4xl font-bold mb-6 text-center">{t('home.welcome')}</h1>
         <p className="text-xl mb-8 text-center">{t('home.intro')}</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

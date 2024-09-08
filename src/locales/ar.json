@@ -1,67 +1,74 @@
 {
-  "arTranslations":{
-
-    "site": {
-      "name": "اسم الموقع",
-      "description": "وصف الموقع"
-    },
-    "nav": {
-      "home": "الرئيسية",
-      "blog": "المدونة",
-      "docs": "الوثائق"
-    },
-    "home": {
-      "title": "الصفحة الرئيسية",
-      "description": "مرحبًا بك في موقعنا",
-      "welcome": "مرحبًا بك في موقعنا",
-      "intro": "هذا هو محتوى الصفحة الرئيسية"
-    },
-    "blog": {
-      "title": "المدونة",
-      "description": "اقرأ أحدث مقالاتنا",
-      "header": "المدونة",
-      "shareTitle": "شارك هذه المدونة",
-      "readMore": "اقرأ المزيد"
-    },
-    "docs": {
-      "title": "الوثائق",
-      "description": "استكشف وثائقنا",
-      "header": "الوثائق",
-      "shareTitle": "شارك هذه الوثائق"
-    },
-    "page": {
-      "description": "صفحة {{page}}"
-    },
-    "search": {
-      "placeholder": "ابحث هنا...",
-      "button": "بحث"
-    },
-    "pagination": {
-      "previous": "السابق",
-      "next": "التالي",
-      "pageXOfY": "الصفحة {{current}} من {{total}}"
-    },
-    "theme": {
-      "light": "الوضع الفاتح",
-      "dark": "الوضع الداكن",
-      "toggle": "تبديل الوضع"
-    },
-    "language": {
-      "ar": "العربية",
-      "en": "الإنجليزية",
-      "select": "اختر اللغة"
-    },
-    "footer": {
-      "copyright": "جميع الحقوق محفوظة © {{year}}"
-    },
-    "share": {
-      "facebook": "شارك على فيسبوك",
-      "twitter": "شارك على تويتر",
-      "linkedin": "شارك على لينكد إن"
-    },
-    "error": {
-      "notFound": "الصفحة غير موجودة",
-      "goHome": "العودة للصفحة الرئيسية"
-    }
+  "websiteTitle":"Maghz Docs",
+  "headerNavigation": "التنقل في الرأس",
+  "Home": "الرئيسية",
+  "Intro": "مقدمة",
+  "About": "حول",
+  "Settings": "الإعدادات",
+  "AdvancedSearch": "البحث المتقدم",
+  "footerNavigation": "التنقل في التذييل",
+  "footer": {
+    "home": "الرئيسية",
+    "intro": "مقدمة",
+    "about": "حول",
+    "settings": "الإعدادات",
+    "search": "البحث"
+  },
+  "Copyright for MaghzDocs by @AhmedAlmaghz": "حقوق النشر محفوظة لـ MaghzDocs بواسطة @AhmedAlmaghz - {{year}}",
+  "searchPlaceholder": "ابحث هنا...",
+  "searchInput": "إدخال البحث",
+  "searchButton": "زر البحث",
+  "contents": "المحتويات",
+  "toggleSidebar": "تبديل الشريط الجانبي",
+  "recentUpdates": "التحديثات الأخيرة",
+  "previous": "السابق",
+  "next": "التالي",
+  "scrollToTop": "انتقل إلى الأعلى",
+  "scrollToBottom": "انتقل إلى الأسفل",
+  "editOnGitHub": "تعديل على GitHub",
+  "Fork": "Fork",
+  "GitHub": "GitHub",
+  "print": "طباعة",
+  "downloadPDF": "تنزيل PDF",
+  "shareOnFacebook": "مشاركة على Facebook",
+  "shareOnTwitter": "مشاركة على Twitter",
+  "shareOnLinkedIn": "مشاركة على LinkedIn",
+  "toggleTheme": "تبديل السمة",
+  "toggleDirection": "تبديل الاتجاه",
+  "toggleLanguage": "تبديل اللغة",
+  "settings": "الإعدادات",
+  "language": "اللغة",
+  "arabic": "العربية",
+  "english": "الإنجليزية",
+  "direction": "الاتجاه",
+  "rightToLeft": "من اليمين إلى اليسار",
+  "leftToRight": "من اليسار إلى اليمين",
+  "theme": "السمة",
+  "light": "فاتح",
+  "dark": "داكن",
+  "resetSettings": "إعادة تعيين الإعدادات",
+  "home": {
+    "title": "Maghz Docs - وثائقك في مكان واحد",
+    "description": "Maghz Docs هو قالب مفتوح المصدر لبناء مواقع توثيق رائعة وسهلة الاستخدام.",
+    "keywords": "توثيق, وثائق, قالب, مفتوح المصدر, React, TailwindCSS",
+    "welcome": "مرحبًا بك في Maghz Docs!",
+    "intro": "Maghz Docs هو قالب مفتوح المصدر لبناء مواقع توثيق رائعة وسهلة الاستخدام. يمكنك استخدامه لبناء موقعك الخاص للتوثيق أو المدونة أو أي موقع آخر.",
+    "getStarted": "ابدأ",
+    "getStartedDesc": "تعرف على كيفية إعداد Maghz Docs وبدء استخدامه.",
+    "about": "حول",
+    "aboutDesc": "تعرف على المزيد حول Maghz Docs وفريق التطوير.",
+    "search": "البحث",
+    "searchDesc": "ابحث عن أي شيء في وثائق Maghz Docs."
+  },
+  "advancedSearch": "البحث المتقدم",
+  "allCategories": "كل الفئات",
+  "documentation": "التوثيق",
+  "tutorials": "الدروس",
+  "articles": "المقالات",
+  "search": "بحث",
+  "errorBoundary": {
+    "title": "عذرًا، حدث خطأ ما.",
+    "message": "يرجى إعادة تحميل الصفحة أو المحاولة لاحقًا.",
+    "reload": "إعادة تحميل الصفحة"
   }
 }

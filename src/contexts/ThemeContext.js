@@ -6,12 +6,12 @@ export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState('light');
-  const [direction, setDirection] = useState('ltr');
-  // const { t } = useTranslation();
+  const [direction, setDirection] = useState('rtl');
+  // i18n.changeLanguage('ar');
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'light';
-    const savedDirection = localStorage.getItem('direction') || 'ltr';
+    const savedDirection = localStorage.getItem('direction') || 'rtl';
     
     setTheme(savedTheme);
     setDirection(savedDirection);
@@ -29,7 +29,7 @@ export const ThemeProvider = ({ children }) => {
   };
 
   const toggleDirection = () => {
-    const newDirection = direction === 'rtl' ? 'ltr' : 'rtl';
+    const newDirection= direction==='rtl' ?  'ltr': 'rtl';
     setDirection(newDirection);
     document.documentElement.dir = newDirection;
     localStorage.setItem('direction', newDirection);
@@ -38,6 +38,13 @@ export const ThemeProvider = ({ children }) => {
   const toggleLanguage = () => {
     const newLang = i18n.language === 'ar' ? 'en' : 'ar';
     i18n.changeLanguage(newLang);
+
+    const newDirection= newLang==='ar' ? 'rtl': 'ltr'
+
+    setDirection(newDirection);
+    document.documentElement.dir = newDirection;
+    localStorage.setItem('direction', newDirection);
+    
   };
 
   return (

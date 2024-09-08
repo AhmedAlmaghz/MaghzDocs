@@ -1,6 +1,7 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { ThemeContext } from '../contexts/ThemeContext';
 import MarkdownContent from '../components/MarkdownContent';
 import processMarkdown from '../utils/markdown';
 import ScrollButtons from '../components/ScrollButtons';
@@ -31,9 +32,10 @@ const PageIndex = () => {
   const [post, setPost] = useState({ frontmatter: {}, content: '' });
   const location = useLocation();
   const slug = location.pathname; // المسار الكامل
-  
+  const {theme} = useContext(ThemeContext);
+
   useEffect(() => {
-    const filePath='/markdown/'+slug+'.md';
+    const filePath = '/markdown' + slug + '.md';
     // const filePath='/html/'+slug+'.html';
     // const filePath=slug;//+'.html';
     const fetchPost = async () => {
@@ -55,7 +57,7 @@ const PageIndex = () => {
   // // console.log(post.frontmatter.title);
   // console.log(post);
 
-  const title=String(post.frontmatter.title).replace('_', ' ');
+  const title = String(post.frontmatter.title).replace('_', ' ');
 
   // if (isLoading) return <SkeletonLoader />;
   // if (error) return <div className="text-red-600 text-center p-4">{error.message}</div>;
@@ -67,18 +69,18 @@ const PageIndex = () => {
         <meta name="description" content={memoizedPost.frontmatter.description || ''} />
       </Helmet>
       {/* <div className="max-w-3xl mx-auto px-4 py-8"> */}
-      <div className="mx-auto px-16 py-8">
+      <div className="content-container" >
         <SharePage url={window.location.href} title={title} />
         <h1 className="text-3xl font-bold mb-6">{title}</h1>
-        
-        <MarkdownContent id="MarkdownContent" content={memoizedPost.content} />
-        
+
+        <MarkdownContent id="MarkdownContent" content={memoizedPost.content} className="dark:text-gray-100" />
+
         <div className="flex flex-row items-center justify-center m-8 space-x-2">
-            <div className="flex items-center space-x-2">
-                <SocialShare />
-            </div>
+          <div className="flex items-center space-x-2">
+            <SocialShare />
+          </div>
         </div>
-       
+
 
         <div className="mt-8">
           <Pagination />

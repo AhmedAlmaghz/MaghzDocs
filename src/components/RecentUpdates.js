@@ -6,7 +6,7 @@ const RecentUpdates = ({ updates }) => {
   const { t } = useTranslation();
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-6">
+    <div className="recent-updates dark:bg-gray-300 dark:text-gray-800">
       <h2 className="text-2xl font-bold mb-4">{t('recentUpdates')}</h2>
       <ul className="space-y-4">
         {updates.map((update, index) => (

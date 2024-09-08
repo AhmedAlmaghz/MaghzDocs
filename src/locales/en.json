@@ -1,67 +1,74 @@
 {
-  "enTranslations":{
-
-    "site": {
-      "name": "Site Name",
-      "description": "Site Description"
-    },
-    "nav": {
-      "home": "Home",
-      "blog": "Blog",
-      "docs": "Docs"
-    },
-    "home": {
-      "title": "Home Page",
-      "description": "Welcome to our website",
-      "welcome": "Welcome to Our Website",
-      "intro": "This is the content of the home page"
-    },
-    "blog": {
-      "title": "Blog",
-      "description": "Read our latest articles",
-      "header": "Blog",
-      "shareTitle": "Share this blog",
-      "readMore": "Read More"
-    },
-    "docs": {
-      "title": "Documentation",
-      "description": "Explore our documentation",
-      "header": "Documentation",
-      "shareTitle": "Share these docs"
-    },
-    "page": {
-      "description": "{{page}} page"
-    },
-    "search": {
-      "placeholder": "Search here...",
-      "button": "Search"
-    },
-    "pagination": {
-      "previous": "Previous",
-      "next": "Next",
-      "pageXOfY": "Page {{current}} of {{total}}"
-    },
-    "theme": {
-      "light": "Light Mode",
-      "dark": "Dark Mode",
-      "toggle": "Toggle Theme"
-    },
-    "language": {
-      "ar": "Arabic",
-      "en": "English",
-      "select": "Select Language"
-    },
-    "footer": {
-      "copyright": "All rights reserved © {{year}}"
-    },
-    "share": {
-      "facebook": "Share on Facebook",
-      "twitter": "Share on Twitter",
-      "linkedin": "Share on LinkedIn"
-    },
-    "error": {
-      "notFound": "Page Not Found",
-      "goHome": "Go to Home Page"
-    }
+  "websiteTitle":"Maghz Docs",
+  "headerNavigation": "Header Navigation",
+  "Home": "Home",
+  "Intro": "Intro",
+  "About": "About",
+  "Settings": "Settings",
+  "AdvancedSearch": "Advanced Search",
+  "footerNavigation": "Footer Navigation",
+  "footer": {
+    "home": "Home",
+    "intro": "Intro",
+    "about": "About",
+    "settings": "Settings",
+    "search": "Search"
+  },
+  "Copyright for MaghzDocs by @AhmedAlmaghz": "Copyright MaghzDocs by @AhmedAlmaghz - {{year}}",
+  "searchPlaceholder": "Search here...",
+  "searchInput": "Search input",
+  "searchButton": "Search button",
+  "contents": "Contents",
+  "toggleSidebar": "Toggle sidebar",
+  "recentUpdates": "Recent Updates",
+  "previous": "Previous",
+  "next": "Next",
+  "scrollToTop": "Scroll to top",
+  "scrollToBottom": "Scroll to bottom",
+  "editOnGitHub": "Edit on GitHub",
+  "Fork": "Fork",
+  "GitHub": "GitHub",
+  "print": "Print",
+  "downloadPDF": "Download PDF",
+  "shareOnFacebook": "Share on Facebook",
+  "shareOnTwitter": "Share on Twitter",
+  "shareOnLinkedIn": "Share on LinkedIn",
+  "toggleTheme": "Toggle theme",
+  "toggleDirection": "Toggle direction",
+  "toggleLanguage": "Toggle language",
+  "settings": "Settings",
+  "language": "Language",
+  "arabic": "Arabic",
+  "english": "English",
+  "direction": "Direction",
+  "rightToLeft": "Right-to-left",
+  "leftToRight": "Left-to-right",
+  "theme": "Theme",
+  "light": "Light",
+  "dark": "Dark",
+  "resetSettings": "Reset settings",
+  "home": {
+    "title": "Maghz Docs - Your docs in one place",
+    "description": "Maghz Docs is an open-source template for building beautiful and easy-to-use documentation websites.",
+    "keywords": "documentation, docs, template, open-source, React, TailwindCSS",
+    "welcome": "Welcome to Maghz Docs!",
+    "intro": "Maghz Docs is an open-source template for building beautiful and easy-to-use documentation websites. You can use it to build your own documentation website, blog, or any other website.",
+    "getStarted": "Get Started",
+    "getStartedDesc": "Learn how to set up Maghz Docs and start using it.",
+    "about": "About",
+    "aboutDesc": "Learn more about Maghz Docs and the development team.",
+    "search": "Search",
+    "searchDesc": "Search for anything in the Maghz Docs documentation."
+  },
+  "advancedSearch": "Advanced Search",
+  "allCategories": "All Categories",
+  "documentation": "Documentation",
+  "tutorials": "Tutorials",
+  "articles": "Articles",
+  "search": "Search",
+  "errorBoundary": {
+    "title": "Oops, something went wrong.",
+    "message": "Please reload the page or try again later.",
+    "reload": "Reload Page"
   }
 }

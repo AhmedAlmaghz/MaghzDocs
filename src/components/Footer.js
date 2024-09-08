@@ -8,14 +8,14 @@ const Footer = ({ pages = [] }) => {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-gradient-to-r from-blue-800 via-purple-800 to-pink-800 text-white py-10 px-6 shadow-lg">
+    <footer className="footer">
       <div className="container mx-auto">
         <nav aria-label={t('footerNavigation')} className="mb-8">
           <ul className="flex flex-wrap justify-center space-x-8">
             {pages.map((page, index) => (
               <li key={index} className="mb-4">
-                <Link 
-                  to={`/pages/${page.name}`} 
+                <Link
+                  to={`/pages/${page.name}`}
                   className="flex items-center space-x-2 hover:text-yellow-300 transition-colors duration-300"
                 >
                   {page.name === 'home' && <FaHome size={16} />}

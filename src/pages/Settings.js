@@ -1,18 +1,20 @@
-import React, {useState, useEffect} from 'react';
-import { useSettings } from '../contexts/SettingsContext';
+import React, { useState, useEffect,useContext } from 'react';
+// import { useSettings } from '../contexts/SettingsContext';
+import { ThemeContext } from '../contexts/ThemeContext';
+
 import { useTranslation } from 'react-i18next';
 import { FaGlobe, FaAlignLeft, FaSun } from 'react-icons/fa';
 
 
 const Settings = () => {
-  const { settings, updateSettings, resetSettings } = useSettings();
+  // const { settings, updateSettings, resetSettings } = useSettings();
   const { t } = useTranslation();
   const { i18n } = useTranslation();
-
-  const [setting, setSetting] = useState({
-    language: 'ar',
-    direction: 'rtl',
-    theme: 'light'
+  const { theme, toggleTheme, direction, toggleDirection,language, toggleLanguage } = useContext(ThemeContext);
+  const [settings, setSetting] = useState({
+    language: language,
+    direction: direction,
+    theme: theme
   });
 
   useEffect(() => {
@@ -24,25 +26,29 @@ const Settings = () => {
 
   useEffect(() => {
     // i18n.changeLanguage(setting.language);
-    document.documentElement.lang = setting.language;
-    document.documentElement.dir = setting.direction;
-    document.documentElement.className = setting.theme;
-  }, [setting, i18n]);
+    document.documentElement.lang = settings.language;
+    document.documentElement.dir = settings.direction;
+    document.documentElement.className = settings.theme;
+  }, []);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setSetting(prev => {
-      const newSettings = { ...prev, [name]: value };
-      localStorage.setItem('settings', JSON.stringify(newSettings));
-      return newSettings;
-    });
-    updateSettings({ [name]: value });
-  };
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setSetting(prev => {
+  //     const newSettings = { ...prev, [name]: value };
+  //     localStorage.setItem('settings', JSON.stringify(newSettings));
+  //     return newSettings;
+  //   });
+  //   updateSettings({ [name]: value });
+  // };
+
+  const resetSettings=()=>{
+
+  }
 
 
-  
+
   return (
-    <div className="max-w-md mx-auto bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 mt-8">
+    <div className="settings-container">
       <h1 className="text-3xl font-bold mb-6 text-center dark:text-white">{t('settings')}</h1>
       <div className="space-y-6">
         <div className="flex items-center space-x-4">
@@ -52,8 +58,8 @@ const Settings = () => {
             <select
               name="language"
               value={settings.language}
-              onChange={handleChange}
-              className="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+              // onChange={toggleLanguage}
+              className="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500 "
             >
               <option value="ar">{t('arabic')}</option>
               <option value="en">{t('english')}</option>
@@ -67,8 +73,8 @@ const Settings = () => {
             <select
               name="direction"
               value={settings.direction}
-              onChange={handleChange}
-              className="w-full p-2 border rounded focus:ring-2 focus:ring-green-500 dark:bg-gray-700 dark:text-white"
+              // onChange={toggleDirection}
+              className="w-full p-2 border rounded focus:ring-2 focus:ring-green-500 "
             >
               <option value="rtl">{t('rightToLeft')}</option>
               <option value="ltr">{t('leftToRight')}</option>
@@ -82,9 +88,9 @@ const Settings = () => {
             <select
               name="theme"
               value={settings.theme}
-              onChange={handleChange}
-              className="w-full p-2 border rounded focus:ring-2 focus:ring-yellow-500 dark:bg-gray-700 dark:text-white"
-            >
+              // onChange={toggleTheme}
+              className="w-full p-2 border rounded focus:ring-2 focus:ring-yellow-500"
+              >
               <option value="light">{t('light')}</option>
               <option value="dark">{t('dark')}</option>
             </select>

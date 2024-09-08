@@ -3,8 +3,11 @@ import { PaginationContext } from '../contexts/PaginationContext';
 import { Link } from 'react-router-dom';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { ThemeContext } from '../contexts/ThemeContext';
+import { useTranslation } from 'react-i18next';
+
 
 const Pagination = () => {
+  const { t } = useTranslation();
   const { currentPage, previousPage, nextPage, previousPageTitle, nextPageTitle } = useContext(PaginationContext);
   const { direction } = useContext(ThemeContext);
 
@@ -13,39 +16,39 @@ const Pagination = () => {
   // };
 
   return (
-    <nav className="flex justify-between items-center mt-12 mb-8">
+    <nav className="pagination-container">
       {previousPage && (
-        <Link 
-          to={`/${previousPage}`} 
-          className="flex items-center p-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg hover:from-blue-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105 shadow-md"
+        <Link
+          to={`/${previousPage}`}
+          className="pagination-button pagination-button-previous"
         >
-           {direction==='rtl'? (
-             <FaArrowRight className="ml-2" />
-          ):(
+          {direction === 'rtl' ? (
+            <FaArrowRight className="ml-2" />
+          ) : (
             <FaArrowLeft className="mr-2" />
           )}
-          
+
           <span>
-            <span className="block text-sm">السابق</span>
+            <span className="block text-sm">{t('previous')}</span>
             <span className="block text-lg font-bold">{previousPageTitle}</span>
             {/* <span className="block text-lg font-bold">{getFileName(previousPage)}</span> */}
           </span>
         </Link>
       )}
       {nextPage && (
-        <Link 
-          to={`/${nextPage}`} 
-          className="flex items-center p-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 shadow-md"
+        <Link
+          to={`/${nextPage}`}
+          className="pagination-button pagination-button-next"
         >
           <span>
-            <span className="block text-sm">التالي</span>
+            <span className="block text-sm">{t('next')}</span>
             <span className="block text-lg font-bold">{nextPageTitle}</span>
             {/* <span className="block text-lg font-bold">{getFileName(nextPage)}</span> */}
           </span>
-          {direction==='rtl'? (
+          {direction === 'rtl' ? (
             <FaArrowLeft className="mr-2" />
-          ):(
-              <FaArrowRight className="ml-2" />
+          ) : (
+            <FaArrowRight className="ml-2" />
           )}
 
         </Link>

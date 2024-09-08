@@ -28,17 +28,17 @@ const ScrollButtons = () => {
   };
 
   return (
-    <div className={`fixed bottom-4 left-4 flex flex-col space-y-4 transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+    <div className={`scroll-buttons ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
       <button
         onClick={scrollToTop}
-        className="p-3 bg-gradient-to-r from-green-400 to-blue-500 text-white rounded-full shadow-lg hover:from-green-500 hover:to-blue-600 transition-all transform hover:scale-110"
+        className="scroll-button scroll-button-top"
         aria-label={t('scrollToTop')}
       >
         <FaArrowUp size={15} />
       </button>
       <button
         onClick={scrollToBottom}
-        className="p-3 bg-gradient-to-r from-purple-400 to-pink-500 text-white rounded-full shadow-lg hover:from-purple-500 hover:to-pink-600 transition-all transform hover:scale-110"
+        className="scroll-button scroll-button-bottom"
         aria-label={t('scrollToBottom')}
       >
         <FaArrowDown size={15} />

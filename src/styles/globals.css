@@ -15,158 +15,225 @@ html {
   scroll-behavior: smooth;
 }
 
-:root {
+/* :root {
   --bg-color: #ffffff;
   --text-color: #333333;
 }
-
-.dark {
+.dark { 
   --bg-color: #1a202c;
   --text-color: #eceff3;
-}
+}  */
 
-body {
+/* body {
   @apply bg-skin-base text-skin-base;
-}
+} */
 
 
 /* Start  MarkdownContent.css */
 /* إزالة الحدود من عنصر pre */
 pre {
-  border: none;
-  direction: ltr;
-  background:inherit; /* خلفية داكنة للكود */
-  margin-top: 15px;
-  margin-bottom: 15px;
-  border-radius: 15px;
-  position: relative;
+  @apply border-none bg-inherit mt-4 mb-4 rounded-xl relative;
 }
+
 
 /* تحسين زر النسخ */
 button {
-  background: #3498db; /* لون أزرق هادئ */
-  color: white;
-  border: none;
-  padding: 4px 8px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-button:hover {
-  background: #2980b9; /* لون أزرق داكن عند التحويم */
+  @apply bg-blue-500 text-white border-none p-1 px-2 rounded cursor-pointer transition duration-300 ease-in-out hover:bg-blue-700;
 }
 
 /* أنماط الفيديو لإضافة نسبة العرض إلى الارتفاع */
 .video-container {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-  background: #000;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  @apply relative pb-[56.25%] h-0 overflow-hidden max-w-full bg-black rounded-lg shadow-md;
 }
 
 .video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  @apply absolute top-0 left-0 w-full h-full;
 }
 
 /* تحسين تصميم الخرائط التفاعلية */
 .map-container {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 نسبة العرض إلى الارتفاع */
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  @apply relative pb-[56.25%] h-0 overflow-hidden max-w-full rounded-lg shadow-md;
 }
 
 .map-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none; /* إزالة الحدود */
+  @apply absolute top-0 left-0 w-full h-full border-none;
 }
 
 /* تحسين تصميم الرسوم البيانية */
 .chart-container {
-  margin: 20px 0;
-  padding: 16px;
-  background: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  @apply my-5 p-4 bg-gray-100 rounded-lg shadow-md;
 }
 
 /* تحسين النصوص مثل blockquote */
 blockquote {
-  border-left: 4px solid #3498db; /* شريط أزرق على اليسار */
-  padding-left: 16px;
-  color: #555;
-  font-style: italic;
-  background: #f9f9f9;
-  border-radius: 4px;
-  margin: 16px 0;
+  @apply border-l-4 border-blue-500 pl-4 text-gray-700 italic bg-gray-100 rounded-md my-4;
 }
+
 /* تحسين النصوص مثل tip */
 tip {
-  border-left: 4px solid #3498db; /* شريط أزرق على اليسار */
-  border-right: 4px solid #3498db; /* شريط أزرق على اليسار */
-  padding-left: 16px ;
-  padding-right: 16px ;
-  color: #555;
-  font-style: italic;
-  background: #f9f9f9;
-  border-radius: 4px;
-
+  @apply border-l-4 border-r-4 border-blue-500 pl-4 pr-4 text-gray-700 italic bg-gray-100 rounded-md dark:text-gray-300 dark:bg-gray-700 ;
 }
 
 /* تحسين القوائم */
 ul, ol {
-  padding-left: 20px;
+  @apply pl-5;
 }
 
 ul li, ol li {
-  margin-bottom: 8px;
+  @apply mb-2;
 }
 
 /* تحسين العناوين */
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 24px;
-  margin-bottom: 16px;
-  font-weight: bold;
+  @apply mt-6 mb-4 font-bold;
 }
 
 h1 {
-  font-size: 2em;
+  @apply text-2xl;
 }
 
 h2 {
-  font-size: 1.75em;
+  @apply text-xl;
 }
 
 h3 {
-  font-size: 1.5em;
+  @apply text-lg;
 }
 
 h4 {
-  font-size: 1.25em;
+  @apply text-base;
 }
 
 h5 {
-  font-size: 1.1em;
+  @apply text-sm;
 }
 
 h6 {
-  font-size: 1em;
+  @apply text-xs;
+}
+/* End MarkdownContent.css */
+
+
+
+/* أنماط الرأس */
+.header {
+  @apply bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 shadow-lg;
 }
 
-/* End MarkdownContent.css */
+/* أنماط التذييل */
+.footer {
+  @apply bg-gradient-to-r from-blue-800 via-purple-800 to-pink-800 text-white py-10 px-6 shadow-lg;
+}
+
+/* أنماط الشريط الجانبي */
+.sidebar {
+  @apply bg-gradient-to-r h-full from-gray-100 to-gray-200 p-5 min-w-64 max-w-96 w-80 overflow-auto shadow-lg rounded-lg transition-all duration-300 ease-in-out;
+}
+
+/* أنماط الصفحة الرئيسية */
+.home-container {
+  @apply max-w-4xl mx-auto px-4 py-8;
+}
+
+/* أنماط صفحة المحتوى */
+.content-container {
+  @apply mx-auto px-16 py-8  dark:bg-gray-900 dark:text-gray-300;
+}
+/* أنماط صفحة المحتوى
+.content-container-dark {
+  @apply  mx-auto px-16 py-8;
+} */
+
+/* أنماط صفحة الإعدادات */
+.settings-container {
+  @apply max-w-md mx-auto bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 mt-8;
+}
+
+/* أنماط أخرى */
+.recent-updates {
+  @apply bg-white shadow-md rounded-lg p-6;
+}
+
+.pagination-container {
+  @apply flex justify-between items-center mt-12 mb-8;
+}
+
+.pagination-button {
+  @apply flex items-center p-4 bg-gradient-to-r text-white rounded-lg hover:from-blue-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105 shadow-md;
+}
+
+.pagination-button-previous {
+  @apply from-blue-500 to-purple-500;
+}
+
+.pagination-button-next {
+  @apply from-purple-500 to-pink-500;
+}
+
+.scroll-buttons {
+  @apply fixed bottom-4 left-4 flex flex-col space-y-4 transition-opacity duration-300;
+}
+
+.scroll-button {
+  @apply p-3 bg-gradient-to-r text-white rounded-full shadow-lg transition-all transform hover:scale-110;
+}
+
+.scroll-button-top {
+  @apply from-green-400 to-blue-500 hover:from-green-500 hover:to-blue-600;
+}
+
+.scroll-button-bottom {
+  @apply from-purple-400 to-pink-500 hover:from-purple-500 hover:to-pink-600;
+}
+
+.social-share {
+  @apply flex flex-wrap gap-4;
+}
+
+.social-share-button {
+  @apply flex items-center justify-center space-x-2 text-white p-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 hover:shadow-xl;
+}
+
+.social-share-button-edit {
+  @apply bg-green-600 hover:bg-green-700;
+}
+
+.social-share-button-fork {
+  @apply bg-purple-600 hover:bg-purple-700;
+}
+
+.social-share-button-github {
+  @apply bg-gray-800 hover:bg-gray-700;
+}
+
+.social-share-button-print {
+  @apply bg-yellow-600 hover:bg-yellow-700;
+}
+
+.social-share-button-pdf {
+  @apply bg-red-600 hover:bg-red-700;
+}
+
+.social-share-button-facebook {
+  @apply bg-blue-600 hover:bg-blue-700;
+}
+
+.social-share-button-twitter {
+  @apply bg-blue-400 hover:bg-blue-500;
+}
+
+.social-share-button-linkedin {
+  @apply bg-blue-700 hover:bg-blue-800;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  body {
+    @apply bg-gray-900 text-gray-100;
+  }
+}
+
+body.dark {
+  @apply bg-gray-900 text-gray-100;
+}
+

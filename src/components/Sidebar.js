@@ -1,16 +1,16 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { FaChevronRight, FaChevronLeft, FaFolder, FaFolderOpen, FaFileAlt  } from 'react-icons/fa';
+import { FaChevronRight, FaChevronLeft, FaFolder, FaFolderOpen, FaFileAlt } from 'react-icons/fa';
 import { PaginationContext } from '../contexts/PaginationContext';
 import { ThemeContext } from '../contexts/ThemeContext';
 
 
 const NestedList = ({ items, basePath = '' }) => {
   const location = useLocation();
-  const { setCurrentPage, setPreviousPage, setNextPage,setCurrentPageTitle, setPreviousPageTitle, setNextPageTitle } = useContext(PaginationContext);
+  const { setCurrentPage, setPreviousPage, setNextPage, setCurrentPageTitle, setPreviousPageTitle, setNextPageTitle } = useContext(PaginationContext);
   const { direction } = useContext(ThemeContext);
- 
+
 
   // console.log(direction);
 
@@ -24,7 +24,7 @@ const NestedList = ({ items, basePath = '' }) => {
       setPreviousPageTitle(currentIndex > 0 ? items[currentIndex - 1].name : null);
       setNextPageTitle(currentIndex < items.length - 1 ? items[currentIndex + 1].name : null);
     }
-  }, [location.pathname, items, setCurrentPage, setPreviousPage, setNextPage,setCurrentPageTitle, setPreviousPageTitle, setNextPageTitle]);
+  }, [location.pathname, items, setCurrentPage, setPreviousPage, setNextPage, setCurrentPageTitle, setPreviousPageTitle, setNextPageTitle]);
 
   return (
     <ul className={` ${direction === 'rtl' ? 'pr-2' : 'pl-2'}`}>
@@ -33,7 +33,7 @@ const NestedList = ({ items, basePath = '' }) => {
           {item.type === 'directory' ? (
             <details className="group transition-all duration-300 ease-in-out">
               <summary className={`cursor-pointer font-bold flex items-center space-x-2 text-purple-600 hover:text-purple-800 transition-colors duration-200 ${direction === 'rtl' ? 'justify-start' : 'justify-start'}`}>
-                <span className={` group-open:hidden ${direction === 'rtl' ? 'ml-2':''}`}>
+                <span className={` group-open:hidden ${direction === 'rtl' ? 'ml-2' : ''}`}>
                   <FaFolder size={16} />
                 </span>
                 <span className="hidden group-open:inline">
@@ -46,11 +46,11 @@ const NestedList = ({ items, basePath = '' }) => {
               </div>
             </details>
           ) : (
-            <Link 
-              to={`${basePath}/${item.path}`} 
+            <Link
+              to={`${basePath}/${item.path}`}
               className={`flex items-center space-x-2 text-blue-600 hover:text-blue-800 transition-colors duration-200 ${direction === 'rtl' ? 'justify-start' : 'justify-start'}`}
             >
-              <FaFileAlt size={16} className={`${direction === 'rtl' ? 'ml-2':''}`} />
+              <FaFileAlt size={16} className={`${direction === 'rtl' ? 'ml-2' : ''}`} />
               <span>{item.name.replace('.md', '')}</span>
             </Link>
           )}
@@ -69,7 +69,7 @@ const Sidebar = () => {
   useEffect(() => {
     const fetchStructure = async () => {
       try {
-        const response = await fetch('/markdown/structure.json');
+        const response = await fetch(process.env.REACT_APP_STRUCTURE_FILE_PATH);
         // const response = await fetch('/html/structure.json');
         const data = await response.json();
         setStructure(data);
@@ -86,23 +86,22 @@ const Sidebar = () => {
 
   return (
     <div className="relative" dir={direction}>
-      <button 
-        onClick={toggleSidebar} 
+      <button
+        onClick={toggleSidebar}
         className="absolute z-10 -end-4 top-2 bg-purple-600 text-white p-2 rounded-full hover:bg-purple-700 transition-colors duration-200"
         aria-label={t('toggleSidebar')}
       >
-        {isSidebarVisible ? 
-          (direction === 'ltr' ? <FaChevronLeft /> : <FaChevronRight />) 
-          : 
+        {isSidebarVisible ?
+          (direction === 'ltr' ? <FaChevronLeft /> : <FaChevronRight />)
+          :
           (direction === 'ltr' ? <FaChevronRight /> : <FaChevronLeft />)
         }
       </button>
-      {isSidebarVisible && 
-      <aside 
-        className="bg-gradient-to-r h-full from-gray-100 to-gray-200 p-5 min-w-64 max-w-96 w-75 overflow-auto shadow-lg rounded-lg transition-all duration-300 ease-in-out" >
-        <h2 className="text-2xl font-bold text-purple-700 mb-4">{t('contents')}</h2>
+      {isSidebarVisible &&
+        <aside className="sidebar" >
+          <h2 className="text-2xl font-bold text-purple-700 mb-4">{t('contents')}</h2>
           <NestedList items={structure} />
-      </aside>
+        </aside>
       }
     </div>
   );
